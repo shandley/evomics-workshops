@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getAllSessions, getWorkshops } from '../utils/dataProcessor';
+import { convertFacultyIdToName, getFacultyProfileUrl } from '../utils/facultyHelper';
 
 const SessionDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -125,13 +126,13 @@ const SessionDetail: React.FC = () => {
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
                     <span className="text-blue-600 font-bold text-lg">
-                      {session.presenters[0]?.split(' ').map(n => n[0]).join('') || '?'}
+                      {convertFacultyIdToName(session.presenters[0])?.split(' ').map(n => n[0]).join('') || '?'}
                     </span>
                   </div>
                   <div>
-                    <div className="font-medium text-gray-900">{session.presenters[0]}</div>
+                    <div className="font-medium text-gray-900">{convertFacultyIdToName(session.presenters[0])}</div>
                     <a 
-                      href={`https://shandley.github.io/evomics-faculty/?search=${encodeURIComponent(session.presenters[0])}`}
+                      href={getFacultyProfileUrl(session.presenters[0])}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-blue-600 hover:text-blue-800 text-sm"
@@ -150,13 +151,13 @@ const SessionDetail: React.FC = () => {
                       <div key={index} className="flex items-center space-x-3">
                         <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
                           <span className="text-gray-600 font-medium text-sm">
-                            {presenter.split(' ').map(n => n[0]).join('')}
+                            {convertFacultyIdToName(presenter).split(' ').map(n => n[0]).join('')}
                           </span>
                         </div>
                         <div>
-                          <div className="font-medium text-gray-900">{presenter}</div>
+                          <div className="font-medium text-gray-900">{convertFacultyIdToName(presenter)}</div>
                           <a 
-                            href={`https://shandley.github.io/evomics-faculty/?search=${encodeURIComponent(presenter)}`}
+                            href={getFacultyProfileUrl(presenter)}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-blue-600 hover:text-blue-800 text-sm"
@@ -218,7 +219,7 @@ const SessionDetail: React.FC = () => {
             
             <div className="space-y-3">
               <a
-                href={`https://shandley.github.io/evomics-faculty/?search=${encodeURIComponent(session.presenters[0])}`}
+                href={getFacultyProfileUrl(session.presenters[0])}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full text-center px-4 py-2 border border-blue-300 rounded-md text-sm font-medium text-blue-700 bg-blue-50 hover:bg-blue-100"
