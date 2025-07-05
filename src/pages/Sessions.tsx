@@ -120,7 +120,7 @@ const Sessions: React.FC = () => {
       </div>
 
       {/* Filters */}
-      <div className="bg-white rounded-lg shadow p-6">
+      <div className="bg-white/80 backdrop-blur rounded-xl shadow-lg p-6 border border-white/20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {/* Search */}
           <div>
@@ -200,7 +200,7 @@ const Sessions: React.FC = () => {
       {/* Session List */}
       <div className="space-y-4">
         {filteredSessions.length === 0 ? (
-          <div className="text-center py-12 bg-white rounded-lg shadow">
+          <div className="text-center py-12 bg-white/80 backdrop-blur rounded-xl shadow-lg border border-white/20">
             <p className="text-gray-500">No sessions found matching your criteria.</p>
             <button
               onClick={clearFilters}
@@ -211,7 +211,7 @@ const Sessions: React.FC = () => {
           </div>
         ) : (
           filteredSessions.map((session: SessionDetail) => (
-            <div key={session.id} className="bg-white rounded-lg shadow hover:shadow-md transition-shadow p-6">
+            <div key={session.id} className="bg-white/80 backdrop-blur rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-[1.02] p-6 border border-white/20">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between">
                 <div className="flex-1">
                   <div className="flex items-center space-x-3 mb-2">

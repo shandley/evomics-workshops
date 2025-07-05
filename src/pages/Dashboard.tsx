@@ -21,33 +21,33 @@ const Dashboard: React.FC = () => {
 
       {/* Key Statistics */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-          <div className="text-3xl font-bold text-blue-600 mb-2">{stats.totalSessions}</div>
-          <div className="text-gray-600 font-medium">Teaching Sessions</div>
-          <div className="text-gray-500 text-sm mt-1">Archived & Searchable</div>
+        <div className="bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl shadow-lg p-6 text-center text-white transform hover:scale-105 transition-transform">
+          <div className="text-3xl font-bold mb-2">{stats.totalSessions}</div>
+          <div className="font-medium">Teaching Sessions</div>
+          <div className="text-primary-100 text-sm mt-1">Archived & Searchable</div>
         </div>
         
-        <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-          <div className="text-3xl font-bold text-green-600 mb-2">{stats.totalPresenters}</div>
-          <div className="text-gray-600 font-medium">Faculty Presenters</div>
-          <div className="text-gray-500 text-sm mt-1">Contributing Experts</div>
+        <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-xl shadow-lg p-6 text-center text-white transform hover:scale-105 transition-transform">
+          <div className="text-3xl font-bold mb-2">{stats.totalPresenters}</div>
+          <div className="font-medium">Faculty Presenters</div>
+          <div className="text-green-100 text-sm mt-1">Contributing Experts</div>
         </div>
         
-        <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-          <div className="text-3xl font-bold text-purple-600 mb-2">{stats.totalWorkshops}</div>
-          <div className="text-gray-600 font-medium">Workshop Series</div>
-          <div className="text-gray-500 text-sm mt-1">Active & Historical</div>
+        <div className="bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-xl shadow-lg p-6 text-center text-white transform hover:scale-105 transition-transform">
+          <div className="text-3xl font-bold mb-2">{stats.totalWorkshops}</div>
+          <div className="font-medium">Workshop Series</div>
+          <div className="text-secondary-100 text-sm mt-1">Active & Historical</div>
         </div>
         
-        <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-          <div className="text-3xl font-bold text-orange-600 mb-2">{stats.yearRange.end - stats.yearRange.start + 1}</div>
-          <div className="text-gray-600 font-medium">Years Covered</div>
-          <div className="text-gray-500 text-sm mt-1">{stats.yearRange.start}–{stats.yearRange.end}</div>
+        <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl shadow-lg p-6 text-center text-white transform hover:scale-105 transition-transform">
+          <div className="text-3xl font-bold mb-2">{stats.yearRange.end - stats.yearRange.start + 1}</div>
+          <div className="font-medium">Years Covered</div>
+          <div className="text-orange-100 text-sm mt-1">{stats.yearRange.start}–{stats.yearRange.end}</div>
         </div>
       </div>
 
       {/* Workshop Overview */}
-      <div className="bg-white rounded-lg shadow-lg p-6">
+      <div className="bg-white/80 backdrop-blur rounded-xl shadow-lg p-6 border border-white/20">
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Workshop Series</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {Object.entries(workshops).map(([id, workshop]) => {
@@ -97,25 +97,25 @@ const Dashboard: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <Link 
           to="/sessions"
-          className="bg-blue-50 border border-blue-200 rounded-lg p-6 hover:bg-blue-100 transition-colors group"
+          className="bg-gradient-to-br from-primary-50 to-primary-100 border border-primary-200 rounded-xl p-6 hover:from-primary-100 hover:to-primary-200 transition-all transform hover:scale-105 shadow-lg group"
         >
           <div className="flex items-center mb-4">
-            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-blue-200 transition-colors">
+            <div className="w-12 h-12 bg-primary-500 rounded-lg flex items-center justify-center mr-4 shadow-md">
               <span className="text-2xl">🔍</span>
             </div>
-            <h3 className="text-xl font-bold text-blue-900">Browse Sessions</h3>
+            <h3 className="text-xl font-bold text-primary-900">Browse Sessions</h3>
           </div>
-          <p className="text-blue-700">
+          <p className="text-primary-700">
             Search and filter through all {stats.totalSessions} teaching sessions with advanced filters.
           </p>
         </Link>
 
         <Link 
           to="/timeline"
-          className="bg-green-50 border border-green-200 rounded-lg p-6 hover:bg-green-100 transition-colors group"
+          className="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-xl p-6 hover:from-green-100 hover:to-green-200 transition-all transform hover:scale-105 shadow-lg group"
         >
           <div className="flex items-center mb-4">
-            <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-green-200 transition-colors">
+            <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mr-4 shadow-md">
               <span className="text-2xl">📅</span>
             </div>
             <h3 className="text-xl font-bold text-green-900">Timeline View</h3>
@@ -129,22 +129,22 @@ const Dashboard: React.FC = () => {
           href="https://shandley.github.io/evomics-faculty/"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-purple-50 border border-purple-200 rounded-lg p-6 hover:bg-purple-100 transition-colors group"
+          className="bg-gradient-to-br from-secondary-50 to-secondary-100 border border-secondary-200 rounded-xl p-6 hover:from-secondary-100 hover:to-secondary-200 transition-all transform hover:scale-105 shadow-lg group"
         >
           <div className="flex items-center mb-4">
-            <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-purple-200 transition-colors">
+            <div className="w-12 h-12 bg-secondary-500 rounded-lg flex items-center justify-center mr-4 shadow-md">
               <span className="text-2xl">👥</span>
             </div>
-            <h3 className="text-xl font-bold text-purple-900">Faculty Profiles</h3>
+            <h3 className="text-xl font-bold text-secondary-900">Faculty Profiles</h3>
           </div>
-          <p className="text-purple-700">
+          <p className="text-secondary-700">
             View detailed faculty profiles with enriched information and teaching histories.
           </p>
         </a>
       </div>
 
       {/* Recent Activity Preview */}
-      <div className="bg-white rounded-lg shadow-lg p-6">
+      <div className="bg-white/80 backdrop-blur rounded-xl shadow-lg p-6 border border-white/20">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-bold text-gray-900">Archive Highlights</h2>
           <Link 

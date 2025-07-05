@@ -18,14 +18,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b border-gray-200">
+      <header className="bg-gradient-to-r from-primary-600 to-primary-700 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <Link to="/dashboard" className="flex items-center">
-                <h1 className="text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
+                <h1 className="text-2xl font-bold text-white hover:text-primary-100 transition-colors">
                   📚 Evomics Workshop Archive
                 </h1>
               </Link>
@@ -39,8 +39,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   to={item.href}
                   className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                     isActive(item.href)
-                      ? 'bg-blue-100 text-blue-700'
-                      : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100'
+                      ? 'bg-white/20 text-white'
+                      : 'text-primary-100 hover:text-white hover:bg-white/10'
                   }`}
                 >
                   <span>{item.icon}</span>
@@ -55,7 +55,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 href="https://shandley.github.io/evomics-faculty/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 hover:text-gray-900 transition-colors text-sm"
+                className="text-primary-100 hover:text-white transition-colors text-sm"
               >
                 👥 Faculty
               </a>
@@ -63,7 +63,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 href="https://shandley.github.io/evomics-students/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 hover:text-gray-900 transition-colors text-sm"
+                className="text-primary-100 hover:text-white transition-colors text-sm"
               >
                 🎓 Students
               </a>
@@ -72,7 +72,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
 
         {/* Mobile Navigation */}
-        <div className="md:hidden border-t border-gray-200 bg-gray-50">
+        <div className="md:hidden border-t border-primary-500 bg-primary-700">
           <nav className="px-4 py-2 space-x-4 overflow-x-auto">
             {navigation.map((item) => (
               <Link
@@ -80,8 +80,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 to={item.href}
                 className={`inline-flex items-center space-x-1 px-3 py-1 rounded-md text-sm font-medium transition-colors whitespace-nowrap ${
                   isActive(item.href)
-                    ? 'bg-blue-100 text-blue-700'
-                    : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100'
+                    ? 'bg-white/20 text-white'
+                    : 'text-primary-100 hover:text-white hover:bg-white/10'
                 }`}
               >
                 <span>{item.icon}</span>
