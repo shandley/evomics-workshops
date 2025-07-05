@@ -1,0 +1,368 @@
+{
+  "workshop": "WoG",
+  "year": 2014,
+  "location": "Český Krumlov, Czech Republic",
+  "dates": "January 12-24, 2014",
+  "weeks": [
+    {
+      "week": 1,
+      "sessions": [
+        {
+          "date": "12th Jan",
+          "time": "18-22",
+          "topic": "Reception",
+          "type": "social",
+          "location": "Zlaty Andel",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "13th Jan",
+          "time": "09-12",
+          "topic": "Introduction and Orientation",
+          "type": "orientation",
+          "location": "Theater",
+          "presenters": [
+            "Karin Rengefors"
+          ]
+        },
+        {
+          "date": "13th Jan",
+          "time": "14-17",
+          "topic": "Laboratory Setup",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "13th Jan",
+          "time": "19-22",
+          "topic": "UNIX Introduction",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Julian Catchen"
+          ]
+        },
+        {
+          "date": "14th Jan",
+          "time": "09-12",
+          "topic": "Sequencing Technology",
+          "type": "lecture",
+          "location": "Theater",
+          "presenters": [
+            "Konrad Paszkiewicz"
+          ]
+        },
+        {
+          "date": "14th Jan",
+          "time": "14-17",
+          "topic": "Advanced Unix Commands",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Julian Catchen"
+          ]
+        },
+        {
+          "date": "14th Jan",
+          "time": "19-22",
+          "topic": "Participant Presentations",
+          "type": "presentation",
+          "location": "Prelate",
+          "presenters": [
+            "Workshop Participants"
+          ]
+        },
+        {
+          "date": "15th Jan",
+          "time": "09-12",
+          "topic": "Genomics Study Design",
+          "type": "lecture",
+          "location": "Theater",
+          "presenters": [
+            "Mike Zody"
+          ]
+        },
+        {
+          "date": "15th Jan",
+          "time": "14-17",
+          "topic": "Sequence Data Quality Control",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Naiara Rodríguez-Ezpeleta"
+          ]
+        },
+        {
+          "date": "15th Jan",
+          "time": "19-22",
+          "topic": "Participant Presentations",
+          "type": "presentation",
+          "location": "Prelate",
+          "presenters": [
+            "Workshop Participants"
+          ]
+        },
+        {
+          "date": "16th Jan",
+          "time": "09-12",
+          "topic": "Alignment Methods",
+          "type": "lecture",
+          "location": "Theater",
+          "presenters": [
+            "Konrad Paszkiewicz"
+          ]
+        },
+        {
+          "date": "16th Jan",
+          "time": "14-17",
+          "topic": "Genomics Lab",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Konrad Paszkiewicz"
+          ]
+        },
+        {
+          "date": "16th Jan",
+          "time": "19-22",
+          "topic": "Open Lab",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "17th Jan",
+          "time": "09-12",
+          "topic": "Assembly",
+          "type": "lecture",
+          "location": "Theater",
+          "presenters": [
+            "Rayan Chikhi"
+          ]
+        },
+        {
+          "date": "17th Jan",
+          "time": "14-17",
+          "topic": "Assembly Lab",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Rayan Chikhi"
+          ]
+        },
+        {
+          "date": "17th Jan",
+          "time": "19-22",
+          "topic": "Open Lab",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "18th Jan",
+          "time": "09-12",
+          "topic": "Metagenomics/Microbial Ecology",
+          "type": "lecture",
+          "location": "Theater",
+          "presenters": [
+            "Rob Knight"
+          ]
+        },
+        {
+          "date": "18th Jan",
+          "time": "14-17",
+          "topic": "Genome Structural Variation",
+          "type": "lecture",
+          "location": "Theater",
+          "presenters": [
+            "Evan Eichler"
+          ]
+        },
+        {
+          "date": "18th Jan",
+          "time": "19-22",
+          "topic": "Social Activity",
+          "type": "social",
+          "location": "Český Krumlov",
+          "presenters": [
+            "Workshop Team"
+          ]
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "sessions": [
+        {
+          "date": "19th Jan",
+          "time": "all day",
+          "topic": "Free Day",
+          "type": "social",
+          "location": "Český Krumlov",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "20th Jan",
+          "time": "09-12",
+          "topic": "RAD-sequencing",
+          "type": "lecture",
+          "location": "Theater",
+          "presenters": [
+            "Bill Cresko"
+          ]
+        },
+        {
+          "date": "20th Jan",
+          "time": "14-17",
+          "topic": "STACKS Lab",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Julian Catchen"
+          ]
+        },
+        {
+          "date": "20th Jan",
+          "time": "19-22",
+          "topic": "Open Lab",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "21st Jan",
+          "time": "09-12",
+          "topic": "Clinical Metagenomics",
+          "type": "lecture",
+          "location": "Theater",
+          "presenters": [
+            "Nick Loman"
+          ]
+        },
+        {
+          "date": "21st Jan",
+          "time": "14-17",
+          "topic": "Metagenomics Lab I",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Nick Loman"
+          ]
+        },
+        {
+          "date": "21st Jan",
+          "time": "19-22",
+          "topic": "Python Programming Introduction",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "22nd Jan",
+          "time": "09-12",
+          "topic": "Transcriptomics",
+          "type": "lecture",
+          "location": "Theater",
+          "presenters": [
+            "Manuel Garber"
+          ]
+        },
+        {
+          "date": "22nd Jan",
+          "time": "14-17",
+          "topic": "Transcriptomics Lab",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Manuel Garber"
+          ]
+        },
+        {
+          "date": "22nd Jan",
+          "time": "19-22",
+          "topic": "CREST Tutorial",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "23rd Jan",
+          "time": "09-12",
+          "topic": "Evolutionary Genomics",
+          "type": "lecture",
+          "location": "Theater",
+          "presenters": [
+            "Antonis Rokas"
+          ]
+        },
+        {
+          "date": "23rd Jan",
+          "time": "14-17",
+          "topic": "Metagenomics Lab II: QIIME",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Daniel McDonald"
+          ]
+        },
+        {
+          "date": "23rd Jan",
+          "time": "19-22",
+          "topic": "Continued Metagenomics Lab II and Open Lab",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Daniel McDonald"
+          ]
+        },
+        {
+          "date": "24th Jan",
+          "time": "09-12",
+          "topic": "Ecological Genomics (Part I and II)",
+          "type": "lecture",
+          "location": "Theater",
+          "presenters": [
+            "Chris Wheat"
+          ]
+        },
+        {
+          "date": "24th Jan",
+          "time": "14-17",
+          "topic": "Genomics and Pathogens",
+          "type": "lecture",
+          "location": "Theater",
+          "presenters": [
+            "Neil Hall"
+          ]
+        },
+        {
+          "date": "24th Jan",
+          "time": "19-22",
+          "topic": "End of Workshop Dinner and Party",
+          "type": "social",
+          "location": "Theater",
+          "presenters": [
+            "Workshop Team"
+          ]
+        }
+      ]
+    }
+  ]
+}

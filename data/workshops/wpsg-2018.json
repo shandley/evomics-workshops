@@ -1,0 +1,259 @@
+{
+  "workshop": "WPSG",
+  "year": 2018,
+  "location": "Český Krumlov, Czech Republic",
+  "dates": "January 21-February 3, 2018",
+  "weeks": [
+    {
+      "week": 1,
+      "sessions": [
+        {
+          "date": "21st Jan",
+          "time": "09-12",
+          "topic": "Introduction and orientation",
+          "type": "orientation",
+          "location": "Town Theater",
+          "presenters": [
+            "Walter Salzburger",
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "21st Jan",
+          "time": "14-17",
+          "topic": "UNIX introduction",
+          "type": "practical",
+          "location": "Egon Schiele Art Center",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "22nd Jan",
+          "time": "09-12",
+          "topic": "Likelihood and Bayesian inference",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "David Swofford"
+          ]
+        },
+        {
+          "date": "22nd Jan",
+          "time": "14-17",
+          "topic": "Likelihood and Bayesian inference activity",
+          "type": "practical",
+          "location": "Egon Schiele Art Center",
+          "presenters": [
+            "David Swofford"
+          ]
+        },
+        {
+          "date": "23rd Jan",
+          "time": "09-12",
+          "topic": "Population structure",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Daniel Falush"
+          ]
+        },
+        {
+          "date": "23rd Jan",
+          "time": "14-17",
+          "topic": "STRUCTURE and fineStructure workshops",
+          "type": "practical",
+          "location": "Egon Schiele Art Center",
+          "presenters": [
+            "Daniel Falush"
+          ]
+        },
+        {
+          "date": "24th Jan",
+          "time": "09-12",
+          "topic": "Experimental design / Demography inference",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Richard Durbin"
+          ]
+        },
+        {
+          "date": "24th Jan",
+          "time": "14-17",
+          "topic": "Demography inference with BEAST2",
+          "type": "practical",
+          "location": "Egon Schiele Art Center",
+          "presenters": [
+            "Tim Vaughan"
+          ]
+        },
+        {
+          "date": "25th Jan",
+          "time": "09-12",
+          "topic": "Inferring population history with low-coverage data",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Anders Albrechtsen"
+          ]
+        },
+        {
+          "date": "25th Jan",
+          "time": "14-17",
+          "topic": "ANGSD Lab",
+          "type": "practical",
+          "location": "Egon Schiele Art Center",
+          "presenters": [
+            "Anders Albrechtsen"
+          ]
+        },
+        {
+          "date": "26th Jan",
+          "time": "09-12",
+          "topic": "Demographic inference based on Site frequency spectrum",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Vitor Sousa"
+          ]
+        },
+        {
+          "date": "26th Jan",
+          "time": "14-17",
+          "topic": "fastsimcoal2 activity",
+          "type": "practical",
+          "location": "Egon Schiele Art Center",
+          "presenters": [
+            "Vitor Sousa"
+          ]
+        },
+        {
+          "date": "26th Jan",
+          "time": "19-22",
+          "topic": "Structured coalescent analyses with BEAST2",
+          "type": "practical",
+          "location": "Egon Schiele Art Center",
+          "presenters": [
+            "Tim Vaughan"
+          ]
+        },
+        {
+          "date": "27th Jan",
+          "time": "09-12",
+          "topic": "The genomics of organismal diversification",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Walter Salzburger"
+          ]
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "sessions": [
+        {
+          "date": "29th Jan",
+          "time": "09-12",
+          "topic": "Positive and negative selection",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Claudia Bank"
+          ]
+        },
+        {
+          "date": "29th Jan",
+          "time": "14-17",
+          "topic": "Species tree estimation using SVDQuartets",
+          "type": "practical",
+          "location": "Egon Schiele Art Center",
+          "presenters": [
+            "David Swofford"
+          ]
+        },
+        {
+          "date": "30th Jan",
+          "time": "09-12",
+          "topic": "Genomics basis of adaptive evolution",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Angela Hancock"
+          ]
+        },
+        {
+          "date": "30th Jan",
+          "time": "14-17",
+          "topic": "Species delimitation with SNAPP",
+          "type": "practical",
+          "location": "Egon Schiele Art Center",
+          "presenters": [
+            "Huw Ogilvie"
+          ]
+        },
+        {
+          "date": "31st Jan",
+          "time": "09-12",
+          "topic": "Evolution of the mutation spectrum",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Kelley Harris"
+          ]
+        },
+        {
+          "date": "31st Jan",
+          "time": "14-17",
+          "topic": "Mutation spectrum analysis activity",
+          "type": "practical",
+          "location": "Egon Schiele Art Center",
+          "presenters": [
+            "Kelley Harris"
+          ]
+        },
+        {
+          "date": "1st Feb",
+          "time": "09-12",
+          "topic": "Speciation with gene flow",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Chris Jiggins"
+          ]
+        },
+        {
+          "date": "1st Feb",
+          "time": "14-17",
+          "topic": "ABBA BABA statistics and Topology weighting",
+          "type": "practical",
+          "location": "Egon Schiele Art Center",
+          "presenters": [
+            "Simon Martin"
+          ]
+        },
+        {
+          "date": "2nd Feb",
+          "time": "09-12",
+          "topic": "Ancient genomics",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Ludovic Orlando"
+          ]
+        },
+        {
+          "date": "2nd Feb",
+          "time": "14-17",
+          "topic": "Wrap-up session",
+          "type": "discussion",
+          "location": "Town Theater",
+          "presenters": [
+            "Workshop Team"
+          ]
+        }
+      ]
+    }
+  ]
+}

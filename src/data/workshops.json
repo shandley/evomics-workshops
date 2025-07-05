@@ -1,0 +1,59 @@
+{
+  "wog": {
+    "id": "wog",
+    "name": "Workshop on Genomics",
+    "shortName": "WoG",
+    "description": "Annual workshop focusing on genomic data analysis techniques including genome assembly, annotation, alignment, and variant calling.",
+    "active": true,
+    "startYear": 2011,
+    "location": "Český Krumlov, Czech Republic"
+  },
+  "wpsg": {
+    "id": "wpsg",
+    "name": "Workshop on Population and Speciation Genomics",
+    "shortName": "WPSG",
+    "description": "Biennial workshop analyzing genomic data at population and species levels.",
+    "active": true,
+    "startYear": 2016,
+    "location": "Český Krumlov, Czech Republic"
+  },
+  "wphylo": {
+    "id": "wphylo",
+    "name": "Workshop on Phylogenomics",
+    "shortName": "WPhylo",
+    "description": "Workshop exploring large-scale phylogenetics and phylogenomics.",
+    "active": true,
+    "startYear": 2017,
+    "location": "Český Krumlov, Czech Republic"
+  },
+  "wmolevo": {
+    "id": "wmolevo",
+    "name": "Workshop on Molecular Evolution",
+    "shortName": "WMolEvo",
+    "description": "Historical workshop focusing on molecular phylogenetics and population genetics.",
+    "active": false,
+    "startYear": 2011,
+    "endYear": 2015,
+    "location": "Český Krumlov, Czech Republic & Fort Collins, USA"
+  },
+  "htranscriptomics": {
+    "id": "htranscriptomics",
+    "name": "Harvard Workshop on Transcriptomics",
+    "shortName": "HTranscript",
+    "description": "Harvard University workshop on computational transcriptomics and RNA-seq analysis.",
+    "active": false,
+    "startYear": 2017,
+    "endYear": 2017,
+    "location": "Ragon Institute, Boston, USA"
+  },
+  "hmicrobial": {
+    "id": "hmicrobial",
+    "name": "Harvard Workshop on Microbial Genomics",
+    "shortName": "HMicrobial",
+    "description": "Harvard University workshop on bacterial and viral genomics.",
+    "active": false,
+    "startYear": 2016,
+    "endYear": 2016,
+    "location": "Harvard University, Boston, USA"
+  }
+}

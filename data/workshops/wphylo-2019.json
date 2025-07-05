@@ -1,0 +1,327 @@
+{
+  "workshop": "WPhylo",
+  "year": 2019,
+  "location": "Český Krumlov, Czech Republic",
+  "dates": "January 20-February 1, 2019",
+  "weeks": [
+    {
+      "week": 1,
+      "sessions": [
+        {
+          "date": "21st Jan",
+          "time": "09-12",
+          "topic": "Introduction and Orientation",
+          "type": "orientation",
+          "location": "Town Theater",
+          "presenters": [
+            "Antonis Rokas"
+          ]
+        },
+        {
+          "date": "21st Jan",
+          "time": "14-17",
+          "topic": "Lab Introduction",
+          "type": "practical",
+          "location": "Municipal Theater",
+          "presenters": [
+            "Eric",
+            "Anna"
+          ]
+        },
+        {
+          "date": "22nd Jan",
+          "time": "09-12",
+          "topic": "Introduction to Phylogenomics",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Antonis Rokas"
+          ]
+        },
+        {
+          "date": "22nd Jan",
+          "time": "14-17",
+          "topic": "Alignment and Alignment Trimming",
+          "type": "practical",
+          "location": "Municipal Theater",
+          "presenters": [
+            "Lisa",
+            "Marina"
+          ]
+        },
+        {
+          "date": "22nd Jan",
+          "time": "19-22",
+          "topic": "Tree Visualization & Tree Challenge",
+          "type": "practical",
+          "location": "Municipal Theater",
+          "presenters": [
+            "Lisa",
+            "Marina"
+          ]
+        },
+        {
+          "date": "23rd Jan",
+          "time": "09-12",
+          "topic": "Introduction to Phylogenetics, Orthology and Paralogy",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Toni Gabaldón"
+          ]
+        },
+        {
+          "date": "23rd Jan",
+          "time": "14-17",
+          "topic": "Orthology and Paralogy Prediction Lab",
+          "type": "practical",
+          "location": "Municipal Theater",
+          "presenters": [
+            "Toni Gabaldón",
+            "Marina Marcet-Houben"
+          ]
+        },
+        {
+          "date": "23rd Jan",
+          "time": "19-22",
+          "topic": "Partitioning and Concatenation Laboratory",
+          "type": "practical",
+          "location": "Municipal Theater",
+          "presenters": [
+            "Jacob"
+          ]
+        },
+        {
+          "date": "24th Jan",
+          "time": "09-12",
+          "topic": "Introduction to Methods and Software for Phylogenomics",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Xiaofan Zhou"
+          ]
+        },
+        {
+          "date": "24th Jan",
+          "time": "14-17",
+          "topic": "RAxML-NG Introduction and Laboratory",
+          "type": "practical",
+          "location": "Municipal Theater",
+          "presenters": [
+            "Alexey Kozlov"
+          ]
+        },
+        {
+          "date": "24th Jan",
+          "time": "19-22",
+          "topic": "IQ-tree Introduction and Tutorial",
+          "type": "practical",
+          "location": "Municipal Theater",
+          "presenters": [
+            "Stephen Crotty"
+          ]
+        },
+        {
+          "date": "25th Jan",
+          "time": "09-12",
+          "topic": "Non-Vertical Evolution & Phylogenetic Networks",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Celine Scornavacca"
+          ]
+        },
+        {
+          "date": "25th Jan",
+          "time": "14-17",
+          "topic": "Networks Lab Tutorial",
+          "type": "practical",
+          "location": "Municipal Theater",
+          "presenters": [
+            "Celine Scornavacca"
+          ]
+        },
+        {
+          "date": "25th Jan",
+          "time": "19-22",
+          "topic": "Phylobayes Intro",
+          "type": "practical",
+          "location": "Municipal Theater",
+          "presenters": [
+            "Xiaofan Zhou"
+          ]
+        },
+        {
+          "date": "26th Jan",
+          "time": "09-12",
+          "topic": "Coalescent Methods",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Laura Kubatko"
+          ]
+        },
+        {
+          "date": "26th Jan",
+          "time": "14-17",
+          "topic": "Coalescent Methods Lab",
+          "type": "practical",
+          "location": "Municipal Theater",
+          "presenters": [
+            "Laura Kubatko"
+          ]
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "sessions": [
+        {
+          "date": "28th Jan",
+          "time": "09-12",
+          "topic": "Bayesian Phylogenetic Analysis",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Mario dos Reis"
+          ]
+        },
+        {
+          "date": "28th Jan",
+          "time": "14-17",
+          "topic": "Molecular Clocks and Dating Analysis",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Tracy Heath"
+          ]
+        },
+        {
+          "date": "28th Jan",
+          "time": "19-22",
+          "topic": "Bayesian MCMC Tutorial",
+          "type": "practical",
+          "location": "Municipal Theater",
+          "presenters": [
+            "Tracy Heath",
+            "Mario dos Reis"
+          ]
+        },
+        {
+          "date": "29th Jan",
+          "time": "09-12",
+          "topic": "Trait evolution and ancestral state reconstruction",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Laszlo Garamszegi"
+          ]
+        },
+        {
+          "date": "29th Jan",
+          "time": "14-17",
+          "topic": "Trait evolution and ancestral state reconstruction lab",
+          "type": "practical",
+          "location": "Municipal Theater",
+          "presenters": [
+            "Laszlo Garamszegi"
+          ]
+        },
+        {
+          "date": "29th Jan",
+          "time": "19-22",
+          "topic": "Internode certainty and concordance factors tutorial",
+          "type": "practical",
+          "location": "Municipal Theater",
+          "presenters": [
+            "Jacob",
+            "Tracy Heath",
+            "Marina"
+          ]
+        },
+        {
+          "date": "30th Jan",
+          "time": "09-12",
+          "topic": "Evolutionary Genomics",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Jason Stajich"
+          ]
+        },
+        {
+          "date": "30th Jan",
+          "time": "14-17",
+          "topic": "Evolutionary Genomics Practical",
+          "type": "practical",
+          "location": "Municipal Theater",
+          "presenters": [
+            "Jason Stajich"
+          ]
+        },
+        {
+          "date": "30th Jan",
+          "time": "19-22",
+          "topic": "Discussion on phylogenomic pipelines",
+          "type": "discussion",
+          "location": "Municipal Theater",
+          "presenters": [
+            "Marina",
+            "Ania"
+          ]
+        },
+        {
+          "date": "31st Jan",
+          "time": "09-12",
+          "topic": "Reconstructing Ancestral Genomes to Understand Major Transitions",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Jordi Paps Montserrat"
+          ]
+        },
+        {
+          "date": "31st Jan",
+          "time": "14-17",
+          "topic": "Phylogenomics presentations",
+          "type": "presentation",
+          "location": "Town Theater",
+          "presenters": [
+            "Martin Kolisko",
+            "Anna Karnkowska"
+          ]
+        },
+        {
+          "date": "31st Jan",
+          "time": "19-22",
+          "topic": "Open Lab",
+          "type": "practical",
+          "location": "Municipal Theater",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "1st Feb",
+          "time": "09-12",
+          "topic": "Horizontal Gene Transfer",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Gergely Szöllősi"
+          ]
+        },
+        {
+          "date": "1st Feb",
+          "time": "14-17",
+          "topic": "Horizontal Gene Transfer Lab",
+          "type": "practical",
+          "location": "Municipal Theater",
+          "presenters": [
+            "Gergely Szöllősi"
+          ]
+        }
+      ]
+    }
+  ]
+}

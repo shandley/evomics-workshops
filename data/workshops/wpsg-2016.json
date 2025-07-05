@@ -1,0 +1,301 @@
+{
+  "workshop": "WPSG",
+  "year": 2016,
+  "location": "Český Krumlov, Czech Republic",
+  "dates": "January 24-February 6, 2016",
+  "weeks": [
+    {
+      "week": 1,
+      "sessions": [
+        {
+          "date": "24th Jan",
+          "time": "09-12",
+          "topic": "Workshop introduction",
+          "type": "orientation",
+          "location": "Town Theater",
+          "presenters": [
+            "Scott Handley",
+            "Walter Salzburger"
+          ]
+        },
+        {
+          "date": "24th Jan",
+          "time": "14-17",
+          "topic": "UNIX computer lab",
+          "type": "practical",
+          "location": "Computer Lab",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "25th Jan",
+          "time": "09-12",
+          "topic": "File formats, VCFtools, Plink",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "25th Jan",
+          "time": "14-17",
+          "topic": "R and adegenet, STRUCTURE, smartpca",
+          "type": "practical",
+          "location": "Computer Lab",
+          "presenters": [
+            "Daniel Falush"
+          ]
+        },
+        {
+          "date": "26th Jan",
+          "time": "09-12",
+          "topic": "Bayesian and likelihood inference",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Alex Buerkle"
+          ]
+        },
+        {
+          "date": "26th Jan",
+          "time": "14-17",
+          "topic": "Bayesian and likelihood inference activity",
+          "type": "practical",
+          "location": "Computer Lab",
+          "presenters": [
+            "Alex Buerkle"
+          ]
+        },
+        {
+          "date": "27th Jan",
+          "time": "09-12",
+          "topic": "Genotype and SNP calling",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Matteo Fumagalli"
+          ]
+        },
+        {
+          "date": "27th Jan",
+          "time": "14-17",
+          "topic": "Genotype and SNP calling activity",
+          "type": "practical",
+          "location": "Computer Lab",
+          "presenters": [
+            "Matteo Fumagalli"
+          ]
+        },
+        {
+          "date": "28th Jan",
+          "time": "09-12",
+          "topic": "Introgression and admixture modeling",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Alex Buerkle"
+          ]
+        },
+        {
+          "date": "28th Jan",
+          "time": "14-17",
+          "topic": "Introgression and admixture modeling activity",
+          "type": "practical",
+          "location": "Computer Lab",
+          "presenters": [
+            "Alex Buerkle"
+          ]
+        },
+        {
+          "date": "29th Jan",
+          "time": "09-12",
+          "topic": "Natural selection and adaptation",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Oscar Gaggiotti"
+          ]
+        },
+        {
+          "date": "29th Jan",
+          "time": "14-17",
+          "topic": "Natural selection and adaptation activity",
+          "type": "practical",
+          "location": "Computer Lab",
+          "presenters": [
+            "Oscar Gaggiotti"
+          ]
+        },
+        {
+          "date": "30th Jan",
+          "time": "09-12",
+          "topic": "Population demography",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Ryan Gutenkunst"
+          ]
+        },
+        {
+          "date": "30th Jan",
+          "time": "14-17",
+          "topic": "Population demography activity",
+          "type": "practical",
+          "location": "Computer Lab",
+          "presenters": [
+            "Ryan Gutenkunst"
+          ]
+        },
+        {
+          "date": "30th Jan",
+          "time": "19-22",
+          "topic": "Genomics of organismal diversification",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Walter Salzburger"
+          ]
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "sessions": [
+        {
+          "date": "31st Jan",
+          "time": "09-12",
+          "topic": "Ancient genomics",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Ludovic Orlando"
+          ]
+        },
+        {
+          "date": "31st Jan",
+          "time": "14-17",
+          "topic": "Ancient genomics activity",
+          "type": "practical",
+          "location": "Computer Lab",
+          "presenters": [
+            "Ludovic Orlando"
+          ]
+        },
+        {
+          "date": "1st Feb",
+          "time": "09-12",
+          "topic": "Demographic analysis with BEAST2",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Alexei Drummond"
+          ]
+        },
+        {
+          "date": "1st Feb",
+          "time": "14-17",
+          "topic": "Demographic analysis with BEAST2 activity",
+          "type": "practical",
+          "location": "Computer Lab",
+          "presenters": [
+            "Alexei Drummond"
+          ]
+        },
+        {
+          "date": "2nd Feb",
+          "time": "09-12",
+          "topic": "Evolutionary population genomics",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Daniel Berner"
+          ]
+        },
+        {
+          "date": "2nd Feb",
+          "time": "14-17",
+          "topic": "Evolutionary population genomics activity",
+          "type": "practical",
+          "location": "Computer Lab",
+          "presenters": [
+            "Daniel Berner"
+          ]
+        },
+        {
+          "date": "3rd Feb",
+          "time": "09-12",
+          "topic": "Detecting selective sweeps",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Felicity Jones"
+          ]
+        },
+        {
+          "date": "3rd Feb",
+          "time": "14-17",
+          "topic": "Detecting selective sweeps activity",
+          "type": "practical",
+          "location": "Computer Lab",
+          "presenters": [
+            "Felicity Jones"
+          ]
+        },
+        {
+          "date": "4th Feb",
+          "time": "09-12",
+          "topic": "Introgression",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Daniel Falush"
+          ]
+        },
+        {
+          "date": "4th Feb",
+          "time": "14-17",
+          "topic": "Introgression activity",
+          "type": "practical",
+          "location": "Computer Lab",
+          "presenters": [
+            "Daniel Falush"
+          ]
+        },
+        {
+          "date": "5th Feb",
+          "time": "09-12",
+          "topic": "Divergence and gene flow between species",
+          "type": "lecture",
+          "location": "Town Theater",
+          "presenters": [
+            "Chris Jiggins",
+            "Simon Martin"
+          ]
+        },
+        {
+          "date": "5th Feb",
+          "time": "14-17",
+          "topic": "Divergence and gene flow between species activity",
+          "type": "practical",
+          "location": "Computer Lab",
+          "presenters": [
+            "Chris Jiggins",
+            "Simon Martin"
+          ]
+        },
+        {
+          "date": "6th Feb",
+          "time": "09-12",
+          "topic": "Wrap-up session",
+          "type": "discussion",
+          "location": "Town Theater",
+          "presenters": [
+            "Workshop Team"
+          ]
+        }
+      ]
+    }
+  ]
+}

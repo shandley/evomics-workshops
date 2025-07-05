@@ -1,0 +1,380 @@
+{
+  "workshop": "WoG",
+  "year": 2012,
+  "location": "Český Krumlov, Czech Republic",
+  "dates": "January 8-21, 2012",
+  "weeks": [
+    {
+      "week": 1,
+      "sessions": [
+        {
+          "date": "8th Jan",
+          "time": "reception",
+          "topic": "Workshop Reception",
+          "type": "social",
+          "location": "Hotel",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "9th Jan",
+          "time": "09-12",
+          "topic": "Introduction to Genomics",
+          "type": "lecture",
+          "location": "Theater",
+          "presenters": [
+            "Scott Handley"
+          ]
+        },
+        {
+          "date": "9th Jan",
+          "time": "14-17",
+          "topic": "Genomics Study Design",
+          "type": "lecture",
+          "location": "Theater",
+          "presenters": [
+            "Mike Zody"
+          ]
+        },
+        {
+          "date": "9th Jan",
+          "time": "19-22",
+          "topic": "Command Line Analysis Introduction",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Julian Catchen"
+          ]
+        },
+        {
+          "date": "10th Jan",
+          "time": "09-12",
+          "topic": "Quality Assessment and Control",
+          "type": "lecture",
+          "location": "Theater",
+          "presenters": [
+            "Manfred Grabherr"
+          ]
+        },
+        {
+          "date": "10th Jan",
+          "time": "14-17",
+          "topic": "Quality Assessment Laboratory",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Manfred Grabherr"
+          ]
+        },
+        {
+          "date": "10th Jan",
+          "time": "19-22",
+          "topic": "Open Lab",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "11th Jan",
+          "time": "09-12",
+          "topic": "Genome Assembly",
+          "type": "lecture",
+          "location": "Theater",
+          "presenters": [
+            "Manfred Grabherr"
+          ]
+        },
+        {
+          "date": "11th Jan",
+          "time": "14-17",
+          "topic": "Assembly Laboratory",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Manfred Grabherr"
+          ]
+        },
+        {
+          "date": "11th Jan",
+          "time": "19-22",
+          "topic": "Participant Presentations",
+          "type": "presentation",
+          "location": "Prelate",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "12th Jan",
+          "time": "09-12",
+          "topic": "Next-gen Sequencing",
+          "type": "lecture",
+          "location": "Theater",
+          "presenters": [
+            "Henrik Kaessmann"
+          ]
+        },
+        {
+          "date": "12th Jan",
+          "time": "14-17",
+          "topic": "Read Mapping and Variant Calling",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Gerton Lunter"
+          ]
+        },
+        {
+          "date": "12th Jan",
+          "time": "19-22",
+          "topic": "Open Lab",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "13th Jan",
+          "time": "09-12",
+          "topic": "Transcriptomics",
+          "type": "lecture",
+          "location": "Theater",
+          "presenters": [
+            "Manuel Garber"
+          ]
+        },
+        {
+          "date": "13th Jan",
+          "time": "14-17",
+          "topic": "Group Photo and Activity",
+          "type": "social",
+          "location": "Český Krumlov",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "13th Jan",
+          "time": "19-22",
+          "topic": "Transcriptomics Laboratory",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Manuel Garber"
+          ]
+        },
+        {
+          "date": "14th Jan",
+          "time": "09-12",
+          "topic": "Galaxy Platform",
+          "type": "lecture",
+          "location": "Theater",
+          "presenters": [
+            "James Taylor"
+          ]
+        },
+        {
+          "date": "14th Jan",
+          "time": "14-17",
+          "topic": "Galaxy Platform Laboratory",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "James Taylor"
+          ]
+        },
+        {
+          "date": "14th Jan",
+          "time": "19-22",
+          "topic": "Workshop Party",
+          "type": "social",
+          "location": "Zlaty Andel",
+          "presenters": [
+            "Workshop Team"
+          ]
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "sessions": [
+        {
+          "date": "15th Jan",
+          "time": "all day",
+          "topic": "Free Day",
+          "type": "social",
+          "location": "Český Krumlov",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "16th Jan",
+          "time": "09-12",
+          "topic": "Metagenomics",
+          "type": "lecture",
+          "location": "Theater",
+          "presenters": [
+            "Alice McHardy"
+          ]
+        },
+        {
+          "date": "16th Jan",
+          "time": "14-17",
+          "topic": "Metagenomics Laboratory",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Alice McHardy",
+            "Johannes Droge"
+          ]
+        },
+        {
+          "date": "16th Jan",
+          "time": "19-22",
+          "topic": "Continued Metagenomics Lab",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Alice McHardy",
+            "Johannes Droge"
+          ]
+        },
+        {
+          "date": "17th Jan",
+          "time": "09-12",
+          "topic": "Evolutionary Genomics",
+          "type": "lecture",
+          "location": "Theater",
+          "presenters": [
+            "Antonis Rokas"
+          ]
+        },
+        {
+          "date": "17th Jan",
+          "time": "14-17",
+          "topic": "Evolutionary Genomics Laboratory",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Antonis Rokas"
+          ]
+        },
+        {
+          "date": "17th Jan",
+          "time": "19-22",
+          "topic": "Open Lab",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "18th Jan",
+          "time": "09-12",
+          "topic": "Pathogenomics",
+          "type": "lecture",
+          "location": "Theater",
+          "presenters": [
+            "Sophien Kamoun"
+          ]
+        },
+        {
+          "date": "18th Jan",
+          "time": "14-17",
+          "topic": "Pathogenomics Laboratory",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Sophien Kamoun"
+          ]
+        },
+        {
+          "date": "18th Jan",
+          "time": "19-22",
+          "topic": "Participant Presentations",
+          "type": "presentation",
+          "location": "Prelate",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "19th Jan",
+          "time": "09-12",
+          "topic": "Advanced Topic Sessions Planning",
+          "type": "lecture",
+          "location": "Theater",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "19th Jan",
+          "time": "14-17",
+          "topic": "Open Lab and Clinics",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "19th Jan",
+          "time": "19-22",
+          "topic": "Open Lab and Clinics",
+          "type": "practical",
+          "location": "Prelate",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "20th Jan",
+          "time": "09-12",
+          "topic": "Participant Presentations",
+          "type": "presentation",
+          "location": "Theater",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "20th Jan",
+          "time": "14-17",
+          "topic": "Workshop Wrap-up and Discussion",
+          "type": "lecture",
+          "location": "Theater",
+          "presenters": [
+            "Scott Handley"
+          ]
+        },
+        {
+          "date": "20th Jan",
+          "time": "19-22",
+          "topic": "End of Workshop Dinner",
+          "type": "social",
+          "location": "Theater",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "21st Jan",
+          "time": "09-12",
+          "topic": "Departure Day",
+          "type": "social",
+          "location": "Hotel",
+          "presenters": [
+            "Workshop Team"
+          ]
+        }
+      ]
+    }
+  ]
+}

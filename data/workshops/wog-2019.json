@@ -1,0 +1,323 @@
+{
+  "workshop": "WoG",
+  "year": 2019,
+  "location": "Český Krumlov, Czech Republic",
+  "dates": "January 6-19, 2019",
+  "weeks": [
+    {
+      "week": 1,
+      "sessions": [
+        {
+          "date": "7th Jan",
+          "time": "09-12",
+          "topic": "Introduction and Orientation",
+          "type": "orientation",
+          "location": "Town Theatre",
+          "presenters": [
+            "Scott Handley"
+          ]
+        },
+        {
+          "date": "7th Jan",
+          "time": "14-17",
+          "topic": "Marine Ecosystems",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Sonya Dyhrman"
+          ]
+        },
+        {
+          "date": "8th Jan",
+          "time": "09-12",
+          "topic": "Sequencing Technology & Study Design",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Mike Zody"
+          ]
+        },
+        {
+          "date": "8th Jan",
+          "time": "14-17",
+          "topic": "Unix and Software Installation",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Sophie Shaw"
+          ]
+        },
+        {
+          "date": "8th Jan",
+          "time": "19-22",
+          "topic": "Introduction to R",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Hannah Tavalire"
+          ]
+        },
+        {
+          "date": "9th Jan",
+          "time": "09-12",
+          "topic": "Sequence Data Quality Control",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Sophie Shaw"
+          ]
+        },
+        {
+          "date": "9th Jan",
+          "time": "14-17",
+          "topic": "Read Alignment",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Mike Zody"
+          ]
+        },
+        {
+          "date": "9th Jan",
+          "time": "19-22",
+          "topic": "Genomics Lab",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Josephine Paris"
+          ]
+        },
+        {
+          "date": "10th Jan",
+          "time": "09-12",
+          "topic": "Sequence Data Assembly",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Rayan Chikhi"
+          ]
+        },
+        {
+          "date": "10th Jan",
+          "time": "14-17",
+          "topic": "Assembly Lab",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Rayan Chikhi"
+          ]
+        },
+        {
+          "date": "10th Jan",
+          "time": "19-22",
+          "topic": "Research Documentation",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Hannah Tavalire"
+          ]
+        },
+        {
+          "date": "11th Jan",
+          "time": "09-12",
+          "topic": "Genomic Data Visualization",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Malachi Griffith",
+            "Zachary Skidmore"
+          ]
+        },
+        {
+          "date": "11th Jan",
+          "time": "14-17",
+          "topic": "Visualization Lab Part I",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Malachi Griffith",
+            "Zachary Skidmore"
+          ]
+        },
+        {
+          "date": "11th Jan",
+          "time": "19-22",
+          "topic": "Visualization Lab Part II",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Malachi Griffith",
+            "Zachary Skidmore"
+          ]
+        },
+        {
+          "date": "12th Jan",
+          "time": "09-12",
+          "topic": "Statistics for Genomics Lab 1",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Bill Cresko"
+          ]
+        },
+        {
+          "date": "12th Jan",
+          "time": "14-17",
+          "topic": "Statistics for Genomics Lab 2",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Bill Cresko"
+          ]
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "sessions": [
+        {
+          "date": "14th Jan",
+          "time": "09-12",
+          "topic": "Transcriptomics",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Brian Haas"
+          ]
+        },
+        {
+          "date": "14th Jan",
+          "time": "14-17",
+          "topic": "Transcriptomics",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Brian Haas"
+          ]
+        },
+        {
+          "date": "14th Jan",
+          "time": "19-22",
+          "topic": "Transcriptomics",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Brian Haas"
+          ]
+        },
+        {
+          "date": "15th Jan",
+          "time": "09-12",
+          "topic": "Microbiome Analysis",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Amy Willis"
+          ]
+        },
+        {
+          "date": "15th Jan",
+          "time": "14-17",
+          "topic": "Microbiome Analysis",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Amy Willis"
+          ]
+        },
+        {
+          "date": "15th Jan",
+          "time": "19-22",
+          "topic": "Microbiome Analysis continued",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Amy Willis"
+          ]
+        },
+        {
+          "date": "16th Jan",
+          "time": "09-12",
+          "topic": "Population Genomics",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Julian Catchen"
+          ]
+        },
+        {
+          "date": "16th Jan",
+          "time": "14-17",
+          "topic": "Population Genomics",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Julian Catchen",
+            "Josephine Paris"
+          ]
+        },
+        {
+          "date": "16th Jan",
+          "time": "19-22",
+          "topic": "Population Genomics continued",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Julian Catchen",
+            "Josephine Paris"
+          ]
+        },
+        {
+          "date": "17th Jan",
+          "time": "09-12",
+          "topic": "Evolutionary Genomics",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Dag Ahren"
+          ]
+        },
+        {
+          "date": "17th Jan",
+          "time": "14-17",
+          "topic": "Evolutionary Genomics",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Dag Ahren"
+          ]
+        },
+        {
+          "date": "17th Jan",
+          "time": "19-22",
+          "topic": "Evolutionary Genomics continued",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Dag Ahren"
+          ]
+        },
+        {
+          "date": "18th Jan",
+          "time": "09-12",
+          "topic": "Genomics Research Perspectives",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Chris Wheat"
+          ]
+        },
+        {
+          "date": "18th Jan",
+          "time": "14-17",
+          "topic": "Final Open Lab",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Workshop Team"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "workshop": "WoG",
+  "year": 2011,
+  "location": "Smithsonian Institution National Museum of Natural History, Washington, DC, USA",
+  "dates": "October 3-7, 2011",
+  "weeks": [
+    {
+      "week": 1,
+      "sessions": [
+        {
+          "date": "3rd Oct",
+          "time": "09-12",
+          "topic": "Workshop Introduction",
+          "type": "lecture",
+          "location": "Smithsonian Institution",
+          "presenters": [
+            "Michael Cummings"
+          ]
+        },
+        {
+          "date": "3rd Oct",
+          "time": "09-12",
+          "topic": "Genomic Study Design",
+          "type": "lecture",
+          "location": "Smithsonian Institution",
+          "presenters": [
+            "Mike Zody"
+          ]
+        },
+        {
+          "date": "3rd Oct",
+          "time": "14-16",
+          "topic": "Laboratory Introduction",
+          "type": "practical",
+          "location": "Smithsonian Institution",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "3rd Oct",
+          "time": "16-18",
+          "topic": "Unix Tutorial",
+          "type": "practical",
+          "location": "Smithsonian Institution",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "4th Oct",
+          "time": "09-12",
+          "topic": "Data Quality Assessment and Control",
+          "type": "lecture",
+          "location": "Smithsonian Institution",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "4th Oct",
+          "time": "09-12",
+          "topic": "File Formats",
+          "type": "lecture",
+          "location": "Smithsonian Institution",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "4th Oct",
+          "time": "14-18",
+          "topic": "Galaxy: Introduction and Introductory Laboratory",
+          "type": "practical",
+          "location": "Smithsonian Institution",
+          "presenters": [
+            "Anton Nekrutenko"
+          ]
+        },
+        {
+          "date": "5th Oct",
+          "time": "09-12",
+          "topic": "Assembly Lecture",
+          "type": "lecture",
+          "location": "Smithsonian Institution",
+          "presenters": [
+            "Inanc Birol",
+            "Shaun Jackman"
+          ]
+        },
+        {
+          "date": "5th Oct",
+          "time": "14-18",
+          "topic": "ABySS Laboratory",
+          "type": "practical",
+          "location": "Smithsonian Institution",
+          "presenters": [
+            "Shaun Jackman",
+            "Inanc Birol"
+          ]
+        },
+        {
+          "date": "6th Oct",
+          "time": "09-12",
+          "topic": "Metagenomics Lecture",
+          "type": "lecture",
+          "location": "Smithsonian Institution",
+          "presenters": [
+            "Jay Evans",
+            "Scott Cornman"
+          ]
+        },
+        {
+          "date": "6th Oct",
+          "time": "14-18",
+          "topic": "Metagenomics Laboratory",
+          "type": "practical",
+          "location": "Smithsonian Institution",
+          "presenters": [
+            "Scott Handley"
+          ]
+        },
+        {
+          "date": "7th Oct",
+          "time": "09-12",
+          "topic": "Transcriptomics Lecture",
+          "type": "lecture",
+          "location": "Smithsonian Institution",
+          "presenters": [
+            "Manuel Garber"
+          ]
+        },
+        {
+          "date": "7th Oct",
+          "time": "14-18",
+          "topic": "Transcriptomics Lab: Scripture",
+          "type": "practical",
+          "location": "Smithsonian Institution",
+          "presenters": [
+            "Manuel Garber"
+          ]
+        }
+      ]
+    }
+  ]
+}

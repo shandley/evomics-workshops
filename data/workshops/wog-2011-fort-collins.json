@@ -1,0 +1,379 @@
+{
+  "workshop": "WoG",
+  "year": 2011,
+  "location": "Fort Collins, Colorado, USA",
+  "dates": "July 10-23, 2011",
+  "weeks": [
+    {
+      "week": 1,
+      "sessions": [
+        {
+          "date": "10th Jul",
+          "time": "19-22",
+          "topic": "Workshop Reception",
+          "type": "social",
+          "location": "Fort Collins",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "11th Jul",
+          "time": "09-12",
+          "topic": "Workshop Introduction",
+          "type": "lecture",
+          "location": "Fort Collins",
+          "presenters": [
+            "Scott Handley"
+          ]
+        },
+        {
+          "date": "11th Jul",
+          "time": "14-17",
+          "topic": "Identification and Detection of Structural Variation",
+          "type": "lecture",
+          "location": "Fort Collins",
+          "presenters": [
+            "Evan Eichler"
+          ]
+        },
+        {
+          "date": "11th Jul",
+          "time": "19-22",
+          "topic": "Laboratory Introduction",
+          "type": "practical",
+          "location": "Fort Collins",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "12th Jul",
+          "time": "09-12",
+          "topic": "Genomic Study Design",
+          "type": "lecture",
+          "location": "Fort Collins",
+          "presenters": [
+            "Mike Zody"
+          ]
+        },
+        {
+          "date": "12th Jul",
+          "time": "14-17",
+          "topic": "Life Technologies-Ion Torrent and Roche 454 Lectures",
+          "type": "lecture",
+          "location": "Fort Collins",
+          "presenters": [
+            "Craig Cummings",
+            "Sepideh Rogers"
+          ]
+        },
+        {
+          "date": "12th Jul",
+          "time": "19-22",
+          "topic": "Unix Tutorial",
+          "type": "practical",
+          "location": "Fort Collins",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "13th Jul",
+          "time": "09-12",
+          "topic": "Data Quality Assessment and Quality Control",
+          "type": "lecture",
+          "location": "Fort Collins",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "13th Jul",
+          "time": "14-17",
+          "topic": "Perl Programming",
+          "type": "lecture",
+          "location": "Fort Collins",
+          "presenters": [
+            "Jason Stajich"
+          ]
+        },
+        {
+          "date": "13th Jul",
+          "time": "19-22",
+          "topic": "BioPerl Laboratory",
+          "type": "practical",
+          "location": "Fort Collins",
+          "presenters": [
+            "Jason Stajich"
+          ]
+        },
+        {
+          "date": "14th Jul",
+          "time": "09-12",
+          "topic": "Genome Assembly",
+          "type": "lecture",
+          "location": "Fort Collins",
+          "presenters": [
+            "Shaun Jackman"
+          ]
+        },
+        {
+          "date": "14th Jul",
+          "time": "14-17",
+          "topic": "ABySS Laboratory I",
+          "type": "practical",
+          "location": "Fort Collins",
+          "presenters": [
+            "Shaun Jackman"
+          ]
+        },
+        {
+          "date": "14th Jul",
+          "time": "19-22",
+          "topic": "ABySS Laboratory II",
+          "type": "practical",
+          "location": "Fort Collins",
+          "presenters": [
+            "Shaun Jackman"
+          ]
+        },
+        {
+          "date": "15th Jul",
+          "time": "09-12",
+          "topic": "Genome Assembly Lab: Velvet and Bowtie I",
+          "type": "practical",
+          "location": "Fort Collins",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "15th Jul",
+          "time": "14-17",
+          "topic": "Genome Assembly Lab: Velvet and Bowtie II",
+          "type": "practical",
+          "location": "Fort Collins",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "15th Jul",
+          "time": "19-22",
+          "topic": "Open Lab",
+          "type": "practical",
+          "location": "Fort Collins",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "16th Jul",
+          "time": "09-12",
+          "topic": "Transcriptomics",
+          "type": "lecture",
+          "location": "Fort Collins",
+          "presenters": [
+            "Manuel Garber"
+          ]
+        },
+        {
+          "date": "16th Jul",
+          "time": "14-17",
+          "topic": "Transcriptomics Lab: Scripture",
+          "type": "practical",
+          "location": "Fort Collins",
+          "presenters": [
+            "Manuel Garber"
+          ]
+        },
+        {
+          "date": "16th Jul",
+          "time": "19-22",
+          "topic": "Workshop Cookout",
+          "type": "social",
+          "location": "Fort Collins",
+          "presenters": [
+            "Workshop Team"
+          ]
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "sessions": [
+        {
+          "date": "17th Jul",
+          "time": "all day",
+          "topic": "Free Day",
+          "type": "social",
+          "location": "Fort Collins",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "18th Jul",
+          "time": "09-12",
+          "topic": "GMOD/GBrowse",
+          "type": "lecture",
+          "location": "Fort Collins",
+          "presenters": [
+            "Sheldon McKay"
+          ]
+        },
+        {
+          "date": "18th Jul",
+          "time": "14-17",
+          "topic": "GMOD/GBrowse Laboratory",
+          "type": "practical",
+          "location": "Fort Collins",
+          "presenters": [
+            "Sheldon McKay"
+          ]
+        },
+        {
+          "date": "18th Jul",
+          "time": "19-22",
+          "topic": "Open Lab",
+          "type": "practical",
+          "location": "Fort Collins",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "19th Jul",
+          "time": "09-12",
+          "topic": "Metagenomics",
+          "type": "lecture",
+          "location": "Fort Collins",
+          "presenters": [
+            "Scott Handley"
+          ]
+        },
+        {
+          "date": "19th Jul",
+          "time": "14-17",
+          "topic": "Metagenomics Laboratory",
+          "type": "practical",
+          "location": "Fort Collins",
+          "presenters": [
+            "Scott Handley"
+          ]
+        },
+        {
+          "date": "19th Jul",
+          "time": "19-22",
+          "topic": "Individual Projects",
+          "type": "practical",
+          "location": "Fort Collins",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "20th Jul",
+          "time": "09-12",
+          "topic": "Genome Annotation",
+          "type": "lecture",
+          "location": "Fort Collins",
+          "presenters": [
+            "Kendra Kerr Nightingale"
+          ]
+        },
+        {
+          "date": "20th Jul",
+          "time": "14-17",
+          "topic": "Genome Annotation Laboratory",
+          "type": "practical",
+          "location": "Fort Collins",
+          "presenters": [
+            "Kendra Kerr Nightingale"
+          ]
+        },
+        {
+          "date": "20th Jul",
+          "time": "19-22",
+          "topic": "Individual Projects",
+          "type": "practical",
+          "location": "Fort Collins",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "21st Jul",
+          "time": "09-12",
+          "topic": "Participant Presentations",
+          "type": "presentation",
+          "location": "Fort Collins",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "21st Jul",
+          "time": "14-17",
+          "topic": "Individual Projects",
+          "type": "practical",
+          "location": "Fort Collins",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "21st Jul",
+          "time": "19-22",
+          "topic": "Open Lab",
+          "type": "practical",
+          "location": "Fort Collins",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "22nd Jul",
+          "time": "09-12",
+          "topic": "Participant Presentations",
+          "type": "presentation",
+          "location": "Fort Collins",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "22nd Jul",
+          "time": "14-17",
+          "topic": "Workshop Wrap-up and Discussion",
+          "type": "lecture",
+          "location": "Fort Collins",
+          "presenters": [
+            "Scott Handley"
+          ]
+        },
+        {
+          "date": "22nd Jul",
+          "time": "19-22",
+          "topic": "End of Workshop Dinner",
+          "type": "social",
+          "location": "Fort Collins",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "23rd Jul",
+          "time": "09-12",
+          "topic": "Departure Day",
+          "type": "social",
+          "location": "Fort Collins",
+          "presenters": [
+            "Workshop Team"
+          ]
+        }
+      ]
+    }
+  ]
+}

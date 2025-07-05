@@ -1,0 +1,1016 @@
+[
+  {
+    "workshop": "WoG",
+    "fullName": "Workshop on Genomics",
+    "year": 2025,
+    "location": "Český Krumlov, Czech Republic",
+    "dates": "5-18 January, 2025",
+    "totalSessions": 32,
+    "weeks": [
+      {
+        "week": 1,
+        "dateRange": "5-12 January, 2025",
+        "sessions": [
+          {
+            "date": "5th Jan",
+            "day": "Sunday",
+            "time": "18-22",
+            "presenters": ["Everyone"],
+            "topic": "Reception Dinner",
+            "location": "Hotel Zlaty Andel",
+            "type": "social"
+          },
+          {
+            "date": "6th Jan",
+            "day": "Monday",
+            "time": "09-12",
+            "presenters": ["Josie Paris", "Daniel Kintzl"],
+            "topic": "Introduction and Orientation Town Services",
+            "location": "Town Theatre",
+            "type": "orientation"
+          },
+          {
+            "date": "6th Jan",
+            "day": "Monday",
+            "time": "14-17",
+            "presenters": ["Mike Zody"],
+            "topic": "Sequencing Technologies",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "6th Jan",
+            "day": "Monday",
+            "time": "19:30-22",
+            "presenters": ["Everyone"],
+            "topic": "Dreams, Fantasy Dreams, and Genomics",
+            "location": "Krumlov Mill",
+            "type": "social"
+          },
+          {
+            "date": "7th Jan",
+            "day": "Tuesday",
+            "time": "09-12",
+            "presenters": ["Guy Leonard", "Mercè Montoliu Nerín"],
+            "topic": "AMIs, the Cloud, and Computing Introduction to UNIX",
+            "location": "House of Prelate",
+            "type": "lecture"
+          },
+          {
+            "date": "7th Jan",
+            "day": "Tuesday",
+            "time": "14-17",
+            "presenters": ["Mike Zody"],
+            "topic": "Essential File Types in Bioinformatics",
+            "location": "House of Prelate",
+            "type": "lecture"
+          },
+          {
+            "date": "7th Jan",
+            "day": "Tuesday",
+            "time": "19-22",
+            "presenters": ["Mercè Montoliu Nerín"],
+            "topic": "Introduction to UNIX",
+            "location": "House of Prelate",
+            "type": "practical"
+          },
+          {
+            "date": "8th Jan",
+            "day": "Wednesday",
+            "time": "09-12",
+            "presenters": ["Rayan Chikhi"],
+            "topic": "Alignment",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "8th Jan",
+            "day": "Wednesday",
+            "time": "14-17",
+            "presenters": ["Katharina Hoff"],
+            "topic": "Genome Annotation: Theory and Principles",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "8th Jan",
+            "day": "Wednesday",
+            "time": "19-22",
+            "presenters": ["Katharina Hoff"],
+            "topic": "Genome Annotation practical",
+            "location": "House of Prelate",
+            "type": "practical"
+          },
+          {
+            "date": "9th Jan",
+            "day": "Thursday",
+            "time": "09-12",
+            "presenters": ["Camille Marchet", "Antoine Limasset"],
+            "topic": "Genome Assembly: Theory and Principles",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "9th Jan",
+            "day": "Thursday",
+            "time": "14-17",
+            "presenters": ["Camille Marchet", "Antoine Limasset"],
+            "topic": "Genome Assembly practical",
+            "location": "House of Prelate",
+            "type": "practical"
+          },
+          {
+            "date": "9th Jan",
+            "day": "Thursday",
+            "time": "19-22",
+            "presenters": ["Fritz Sedlazeck"],
+            "topic": "Structural Variant Calling",
+            "location": "House of Prelate",
+            "type": "lab"
+          },
+          {
+            "date": "10th Jan",
+            "day": "Friday",
+            "time": "09-12",
+            "presenters": ["Olga Vinnere Pettersson"],
+            "topic": "Experimental Design in Genomics",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "10th Jan",
+            "day": "Friday",
+            "time": "14-17",
+            "presenters": ["Erik Garrison"],
+            "topic": "Variant Calling",
+            "location": "House of Prelate",
+            "type": "lab"
+          },
+          {
+            "date": "10th Jan",
+            "day": "Friday",
+            "time": "19-22",
+            "presenters": ["Workshop Team"],
+            "topic": "Introduction to R",
+            "location": "House of Prelate",
+            "type": "lab"
+          },
+          {
+            "date": "11th Jan",
+            "day": "Saturday",
+            "time": "09-12",
+            "presenters": ["Chris Wheat"],
+            "topic": "Lies, Damn Lies, and Genomics",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "11th Jan",
+            "day": "Saturday",
+            "time": "14-17",
+            "presenters": ["Guy Leonard"],
+            "topic": "Genomics Adventure",
+            "location": "House of Prelate",
+            "type": "practical"
+          },
+          {
+            "date": "11th Jan",
+            "day": "Saturday",
+            "time": "19-late",
+            "presenters": ["Everyone"],
+            "topic": "Town Tour and Mid-Workshop dinner",
+            "location": "Town Square Krumlov Mill",
+            "type": "social"
+          },
+          {
+            "date": "12th Jan",
+            "day": "Sunday",
+            "time": "All Day",
+            "presenters": ["Everyone"],
+            "topic": "Free Day",
+            "location": "Up to you!",
+            "type": "free"
+          }
+        ]
+      },
+      {
+        "week": 2,
+        "dateRange": "13-18 January, 2025",
+        "sessions": [
+          {
+            "date": "13th Jan",
+            "day": "Monday",
+            "time": "09-12",
+            "presenters": ["Evan Eichler"],
+            "topic": "Genome Structural Variation",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "13th Jan",
+            "day": "Monday",
+            "time": "14-17",
+            "presenters": ["Ben Langmead"],
+            "topic": "Genome Indexing",
+            "location": "House of Prelate",
+            "type": "practical"
+          },
+          {
+            "date": "13th Jan",
+            "day": "Monday",
+            "time": "19-22",
+            "presenters": ["Ben Langmead"],
+            "topic": "Genome Indexing Lab",
+            "location": "House of Prelate",
+            "type": "lab"
+          },
+          {
+            "date": "14th Jan",
+            "day": "Tuesday",
+            "time": "09-12",
+            "presenters": ["Brian Haas"],
+            "topic": "Transcriptomics",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "14th Jan",
+            "day": "Tuesday",
+            "time": "14-17",
+            "presenters": ["Brian Haas"],
+            "topic": "Transcriptomics Lab",
+            "location": "House of Prelate",
+            "type": "lab"
+          },
+          {
+            "date": "15th Jan",
+            "day": "Wednesday",
+            "time": "09-12",
+            "presenters": ["Sonya Dyhrman"],
+            "topic": "Genomics in the Ocean",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "16th Jan",
+            "day": "Thursday",
+            "time": "09-12",
+            "presenters": ["Marcela Uliano-Silva"],
+            "topic": "Wonders of Genome Assembly",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "17th Jan",
+            "day": "Friday",
+            "time": "09-12",
+            "presenters": ["Rayan Chikhi"],
+            "topic": "BIG DATA",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "17th Jan",
+            "day": "Friday",
+            "time": "14-17",
+            "presenters": ["Workshop Team"],
+            "topic": "Student Presentations",
+            "location": "Town Theatre",
+            "type": "presentation"
+          },
+          {
+            "date": "17th Jan",
+            "day": "Friday",
+            "time": "19-22",
+            "presenters": ["Everyone"],
+            "topic": "Closing Dinner",
+            "location": "Krumlov Mill",
+            "type": "social"
+          },
+          {
+            "date": "18th Jan",
+            "day": "Saturday",
+            "time": "All Day",
+            "presenters": ["Everyone"],
+            "topic": "Departure",
+            "location": "Various",
+            "type": "departure"
+          }
+        ]
+      }
+    ],
+    "extractedAt": "2025-01-05T00:00:00Z"
+  },
+  {
+    "workshop": "WoG",
+    "fullName": "Workshop on Genomics",
+    "year": 2024,
+    "location": "Český Krumlov, Czech Republic", 
+    "dates": "7-20 January, 2024",
+    "totalSessions": 28,
+    "weeks": [
+      {
+        "week": 1,
+        "dateRange": "7-14 January, 2024",
+        "sessions": [
+          {
+            "date": "7th Jan",
+            "day": "Sunday",
+            "time": "18-22",
+            "presenters": ["Everyone"],
+            "topic": "Reception dinner",
+            "location": "Hotel Zlaty Andel",
+            "type": "social"
+          },
+          {
+            "date": "8th Jan",
+            "day": "Monday",
+            "time": "09-12",
+            "presenters": ["Josie Paris"],
+            "topic": "Introduction and Orientation",
+            "location": "Town Theatre",
+            "type": "orientation"
+          },
+          {
+            "date": "8th Jan",
+            "day": "Monday",
+            "time": "14-17",
+            "presenters": ["Scott Handley"],
+            "topic": "Sequencing Technology",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "8th Jan",
+            "day": "Monday",
+            "time": "19:30-22",
+            "presenters": ["Everyone"],
+            "topic": "Dreams, Fantasy Dreams, and Genomics",
+            "location": "Krumlov Mill",
+            "type": "social"
+          },
+          {
+            "date": "9th Jan",
+            "day": "Tuesday",
+            "time": "09-12",
+            "presenters": ["Workshop Team"],
+            "topic": "UNIX Introduction",
+            "location": "House of Prelate",
+            "type": "practical"
+          },
+          {
+            "date": "9th Jan",
+            "day": "Tuesday",
+            "time": "14-17",
+            "presenters": ["Mercè Montoliu Nerín"],
+            "topic": "UNIX sessions",
+            "location": "House of Prelate",
+            "type": "practical"
+          },
+          {
+            "date": "9th Jan",
+            "day": "Tuesday",
+            "time": "19-22",
+            "presenters": ["Mercè Montoliu Nerín"],
+            "topic": "UNIX sessions",
+            "location": "House of Prelate",
+            "type": "practical"
+          },
+          {
+            "date": "10th Jan",
+            "day": "Wednesday",
+            "time": "09-12",
+            "presenters": ["Rayan Chikhi"],
+            "topic": "Alignment",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "10th Jan",
+            "day": "Wednesday",
+            "time": "14-17",
+            "presenters": ["Katharina Hoff"],
+            "topic": "Genome Annotation",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "10th Jan",
+            "day": "Wednesday",
+            "time": "19-22",
+            "presenters": ["Katharina Hoff"],
+            "topic": "Genome Annotation practical",
+            "location": "House of Prelate",
+            "type": "practical"
+          },
+          {
+            "date": "11th Jan",
+            "day": "Thursday",
+            "time": "09-12",
+            "presenters": ["Camille Marchet", "Antoine Limasset"],
+            "topic": "Genome Assembly",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "11th Jan",
+            "day": "Thursday",
+            "time": "14-17",
+            "presenters": ["Camille Marchet", "Antoine Limasset"],
+            "topic": "Genome Assembly practical",
+            "location": "House of Prelate",
+            "type": "practical"
+          },
+          {
+            "date": "11th Jan",
+            "day": "Thursday",
+            "time": "19-22",
+            "presenters": ["Petr Daněček"],
+            "topic": "Essential File Types in Bioinformatics",
+            "location": "House of Prelate",
+            "type": "lecture"
+          },
+          {
+            "date": "12th Jan",
+            "day": "Friday",
+            "time": "09-12",
+            "presenters": ["Erik Garrison"],
+            "topic": "Variant Calling",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "12th Jan",
+            "day": "Friday",
+            "time": "14-17",
+            "presenters": ["Fritz Sedlazeck"],
+            "topic": "Structural Variant Calling",
+            "location": "House of Prelate",
+            "type": "lecture"
+          },
+          {
+            "date": "12th Jan",
+            "day": "Friday",
+            "time": "19-22",
+            "presenters": ["Guy Leonard"],
+            "topic": "Genomics Adventure",
+            "location": "House of Prelate",
+            "type": "practical"
+          },
+          {
+            "date": "13th Jan",
+            "day": "Saturday",
+            "time": "09-12",
+            "presenters": ["Chris Wheat"],
+            "topic": "Lies, Damn Lies, and Genomics",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "13th Jan",
+            "day": "Saturday",
+            "time": "14-17",
+            "presenters": ["Erik Garrison"],
+            "topic": "Pangenomics",
+            "location": "House of Prelate",
+            "type": "lecture"
+          },
+          {
+            "date": "13th Jan",
+            "day": "Saturday",
+            "time": "19-22",
+            "presenters": ["Everyone"],
+            "topic": "Town Tour and Dinner",
+            "location": "Town Square",
+            "type": "social"
+          },
+          {
+            "date": "14th Jan",
+            "day": "Sunday",
+            "time": "All Day",
+            "presenters": ["Everyone"],
+            "topic": "Free Day",
+            "location": "Up to you!",
+            "type": "free"
+          }
+        ]
+      },
+      {
+        "week": 2,
+        "dateRange": "15-20 January, 2024",
+        "sessions": [
+          {
+            "date": "15th Jan",
+            "day": "Monday",
+            "time": "09-12",
+            "presenters": ["Brian Haas"],
+            "topic": "Transcriptomics and Single-cell Transcriptomics",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "15th Jan",
+            "day": "Monday",
+            "time": "14-17",
+            "presenters": ["Workshop Team"],
+            "topic": "Introduction to R",
+            "location": "House of Prelate",
+            "type": "practical"
+          },
+          {
+            "date": "15th Jan",
+            "day": "Monday",
+            "time": "19-22",
+            "presenters": ["Rachel Steward"],
+            "topic": "Analysis of RNASeq Data",
+            "location": "House of Prelate",
+            "type": "practical"
+          },
+          {
+            "date": "16th Jan",
+            "day": "Tuesday",
+            "time": "09-12",
+            "presenters": ["Sonya Dyhrman"],
+            "topic": "Genomics in the Ocean",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "16th Jan",
+            "day": "Tuesday",
+            "time": "14-17",
+            "presenters": ["Oleg Simakov"],
+            "topic": "Comparative Genomics",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "16th Jan",
+            "day": "Tuesday",
+            "time": "19-22",
+            "presenters": ["David Barnett"],
+            "topic": "Microbiome Analysis",
+            "location": "House of Prelate",
+            "type": "practical"
+          },
+          {
+            "date": "17th Jan",
+            "day": "Wednesday",
+            "time": "09-12",
+            "presenters": ["Marcela Uliano-Silva"],
+            "topic": "The wonders of genome assembly!",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "17th Jan",
+            "day": "Wednesday",
+            "time": "14-17",
+            "presenters": ["Vincenza Colonna"],
+            "topic": "Population Genomics",
+            "location": "House of Prelate",
+            "type": "lecture"
+          },
+          {
+            "date": "17th Jan",
+            "day": "Wednesday",
+            "time": "19-22",
+            "presenters": ["Workshop Team"],
+            "topic": "Open Lab",
+            "location": "House of Prelate",
+            "type": "lab"
+          },
+          {
+            "date": "18th Jan",
+            "day": "Thursday",
+            "time": "09-12",
+            "presenters": ["Evan Eichler"],
+            "topic": "Genome Structural Variation",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "18th Jan",
+            "day": "Thursday",
+            "time": "14-17",
+            "presenters": ["Dag Ahrén"],
+            "topic": "Best Practices in Handling Genomic Data",
+            "location": "House of Prelate",
+            "type": "lecture"
+          },
+          {
+            "date": "18th Jan",
+            "day": "Thursday",
+            "time": "19-22",
+            "presenters": ["Rosa Fernández"],
+            "topic": "Phylogenomics",
+            "location": "House of Prelate",
+            "type": "lecture"
+          },
+          {
+            "date": "19th Jan",
+            "day": "Friday",
+            "time": "09-12",
+            "presenters": ["Rayan Chikhi"],
+            "topic": "BIG DATA",
+            "location": "House of Prelate",
+            "type": "lecture"
+          },
+          {
+            "date": "19th Jan",
+            "day": "Friday",
+            "time": "14-17",
+            "presenters": ["Workshop Team"],
+            "topic": "Round Table Discussions, T-shirts and Certificates",
+            "location": "House of Prelate",
+            "type": "discussion"
+          },
+          {
+            "date": "19th Jan",
+            "day": "Friday",
+            "time": "19:30-22",
+            "presenters": ["Everyone"],
+            "topic": "End of Workshop Party",
+            "location": "Venue TBD",
+            "type": "social"
+          },
+          {
+            "date": "20th Jan",
+            "day": "Saturday",
+            "time": "All Day",
+            "presenters": ["Everyone"],
+            "topic": "Departure",
+            "location": "Various",
+            "type": "departure"
+          }
+        ]
+      }
+    ],
+    "extractedAt": "2025-01-05T00:00:00Z"
+  },
+  {
+    "workshop": "WoG",
+    "fullName": "Workshop on Genomics",
+    "year": 2023,
+    "location": "Český Krumlov, Czech Republic",
+    "dates": "14-27 May, 2023",
+    "totalSessions": 30,
+    "weeks": [
+      {
+        "week": 1,
+        "dateRange": "14-21 May, 2023",
+        "sessions": [
+          {
+            "date": "14th May",
+            "day": "Sunday",
+            "time": "18-22",
+            "presenters": ["Everyone"],
+            "topic": "Reception",
+            "location": "Hotel Zlaty Andel",
+            "type": "social"
+          },
+          {
+            "date": "15th May",
+            "day": "Monday",
+            "time": "09-12",
+            "presenters": ["Josie Paris", "Daniel Kintzl"],
+            "topic": "Introduction and Orientation",
+            "location": "Town Theatre",
+            "type": "orientation"
+          },
+          {
+            "date": "15th May",
+            "day": "Monday",
+            "time": "14-17",
+            "presenters": ["Mike Zody"],
+            "topic": "Sequencing Technology and Study Design",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "15th May",
+            "day": "Monday",
+            "time": "19:30-22",
+            "presenters": ["Everyone"],
+            "topic": "Scientific Speed Networking",
+            "location": "Egon Schiele Museum",
+            "type": "social"
+          },
+          {
+            "date": "16th May",
+            "day": "Tuesday",
+            "time": "09-12",
+            "presenters": ["Workshop Team"],
+            "topic": "Dreams, fantasy dreams and genomics",
+            "location": "Town Theatre",
+            "type": "discussion"
+          },
+          {
+            "date": "16th May",
+            "day": "Tuesday",
+            "time": "14-17",
+            "presenters": ["Mercè Montoliu Nerín"],
+            "topic": "UNIX",
+            "location": "House of Prelate",
+            "type": "practical"
+          },
+          {
+            "date": "16th May",
+            "day": "Tuesday",
+            "time": "19-22",
+            "presenters": ["Mercè Montoliu Nerín"],
+            "topic": "UNIX",
+            "location": "House of Prelate",
+            "type": "practical"
+          },
+          {
+            "date": "17th May",
+            "day": "Wednesday",
+            "time": "09-12",
+            "presenters": ["Mike Zody"],
+            "topic": "Alignment",
+            "location": "House of Prelate",
+            "type": "lecture"
+          },
+          {
+            "date": "17th May",
+            "day": "Wednesday",
+            "time": "14-17",
+            "presenters": ["Erik Garrison"],
+            "topic": "Variant Calling",
+            "location": "House of Prelate",
+            "type": "lecture"
+          },
+          {
+            "date": "17th May",
+            "day": "Wednesday",
+            "time": "19-22",
+            "presenters": ["Fritz Sedlazeck"],
+            "topic": "Structural Variants",
+            "location": "House of Prelate",
+            "type": "lecture"
+          },
+          {
+            "date": "18th May",
+            "day": "Thursday",
+            "time": "09-12",
+            "presenters": ["Camille Marchet", "Antoine Limasset"],
+            "topic": "Genome Assembly: theory and principles",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "18th May",
+            "day": "Thursday",
+            "time": "14-17",
+            "presenters": ["Marcela Uliano-Silva"],
+            "topic": "Genome Assembly: from reads to a genome",
+            "location": "House of Prelate",
+            "type": "practical"
+          },
+          {
+            "date": "18th May",
+            "day": "Thursday",
+            "time": "19-22",
+            "presenters": ["Marcela Uliano-Silva"],
+            "topic": "Genome Assembly: from reads to a genome",
+            "location": "House of Prelate",
+            "type": "practical"
+          },
+          {
+            "date": "19th May",
+            "day": "Friday",
+            "time": "09-12",
+            "presenters": ["Katharina Hoff", "Natalia Nenasheva"],
+            "topic": "Genome Annotation",
+            "location": "House of Prelate",
+            "type": "lecture"
+          },
+          {
+            "date": "19th May",
+            "day": "Friday",
+            "time": "14-17",
+            "presenters": ["Katharina Hoff", "Natalia Nenasheva"],
+            "topic": "Genome Annotation",
+            "location": "House of Prelate",
+            "type": "practical"
+          },
+          {
+            "date": "19th May",
+            "day": "Friday",
+            "time": "19-22",
+            "presenters": ["Guy Leonard", "Josie Paris"],
+            "topic": "Genomics Adventure",
+            "location": "House of Prelate",
+            "type": "practical"
+          },
+          {
+            "date": "20th May",
+            "day": "Saturday",
+            "time": "09-12",
+            "presenters": ["Erik Garrison"],
+            "topic": "Pangenomics",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "20th May",
+            "day": "Saturday",
+            "time": "14-15",
+            "presenters": ["Rayan Chikhi"],
+            "topic": "BIG Data",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "20th May",
+            "day": "Saturday",
+            "time": "15-17",
+            "presenters": ["Workshop Team"],
+            "topic": "Open Lab / Round Table Discussions",
+            "location": "House of Prelate",
+            "type": "discussion"
+          },
+          {
+            "date": "20th May",
+            "day": "Saturday",
+            "time": "18-22",
+            "presenters": ["Everyone"],
+            "topic": "Town Tour and Dinner",
+            "location": "Town Square",
+            "type": "social"
+          },
+          {
+            "date": "21st May",
+            "day": "Sunday",
+            "time": "All Day",
+            "presenters": ["Everyone"],
+            "topic": "Free Day",
+            "location": "Up to you!",
+            "type": "free"
+          }
+        ]
+      },
+      {
+        "week": 2,
+        "dateRange": "22-27 May, 2023",
+        "sessions": [
+          {
+            "date": "22nd May",
+            "day": "Monday",
+            "time": "09-12",
+            "presenters": ["Rob Waterhouse"],
+            "topic": "Comparative Genomics",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "22nd May",
+            "day": "Monday",
+            "time": "12-14",
+            "presenters": ["Workshop Team"],
+            "topic": "Workshop Picnic",
+            "location": "Monastery Gardens",
+            "type": "social"
+          },
+          {
+            "date": "22nd May",
+            "day": "Monday",
+            "time": "14-17",
+            "presenters": ["Francesco Cicconardi"],
+            "topic": "Comparative Genomics",
+            "location": "House of Prelate",
+            "type": "practical"
+          },
+          {
+            "date": "22nd May",
+            "day": "Monday",
+            "time": "19-22",
+            "presenters": ["Workshop Team"],
+            "topic": "R & ggplot2",
+            "location": "House of Prelate",
+            "type": "practical"
+          },
+          {
+            "date": "23rd May",
+            "day": "Tuesday",
+            "time": "09-12",
+            "presenters": ["Rosa Fernández"],
+            "topic": "Phylogenomics",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "23rd May",
+            "day": "Tuesday",
+            "time": "14-17",
+            "presenters": ["Brian Haas"],
+            "topic": "Transcriptomics",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "23rd May",
+            "day": "Tuesday",
+            "time": "19-22",
+            "presenters": ["Rachel Steward"],
+            "topic": "Differential Gene Expression",
+            "location": "House of Prelate",
+            "type": "practical"
+          },
+          {
+            "date": "24th May",
+            "day": "Wednesday",
+            "time": "09-12",
+            "presenters": ["Sonya Dyhrman"],
+            "topic": "Genomics in the Ocean",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "24th May",
+            "day": "Wednesday",
+            "time": "14-17",
+            "presenters": ["Aitor Blanco Miguez", "Paolo Manghi"],
+            "topic": "Metagenomics & Metatranscriptomics",
+            "location": "House of Prelate",
+            "type": "lecture"
+          },
+          {
+            "date": "24th May",
+            "day": "Wednesday",
+            "time": "19-22",
+            "presenters": ["David Barnett"],
+            "topic": "Microbiome Analysis",
+            "location": "House of Prelate",
+            "type": "practical"
+          },
+          {
+            "date": "25th May",
+            "day": "Thursday",
+            "time": "09-12",
+            "presenters": ["Evan Eichler"],
+            "topic": "Genome Structural Variation",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "25th May",
+            "day": "Thursday",
+            "time": "14-17",
+            "presenters": ["James Whiting"],
+            "topic": "Population Genomics",
+            "location": "House of Prelate",
+            "type": "lecture"
+          },
+          {
+            "date": "25th May",
+            "day": "Thursday",
+            "time": "19-22",
+            "presenters": ["Doug Scofield"],
+            "topic": "Best Practices in Handling Genomic Data",
+            "location": "House of Prelate",
+            "type": "lecture"
+          },
+          {
+            "date": "26th May",
+            "day": "Friday",
+            "time": "09-12",
+            "presenters": ["Chris Wheat"],
+            "topic": "Lies, Damn Lies, and Genomics",
+            "location": "Town Theatre",
+            "type": "lecture"
+          },
+          {
+            "date": "26th May",
+            "day": "Friday",
+            "time": "14-17",
+            "presenters": ["Workshop Team"],
+            "topic": "Round Table Discussions, T-shirts and Certificates",
+            "location": "House of Prelate",
+            "type": "discussion"
+          },
+          {
+            "date": "26th May",
+            "day": "Friday",
+            "time": "19:30-22",
+            "presenters": ["Everyone"],
+            "topic": "End of Workshop Party",
+            "location": "Venue TBD",
+            "type": "social"
+          },
+          {
+            "date": "27th May",
+            "day": "Saturday",
+            "time": "All Day",
+            "presenters": ["Everyone"],
+            "topic": "Departure",
+            "location": "Various",
+            "type": "departure"
+          }
+        ]
+      }
+    ],
+    "extractedAt": "2025-01-05T00:00:00Z"
+  }
+]

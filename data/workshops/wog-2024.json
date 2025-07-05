@@ -1,0 +1,251 @@
+{
+  "workshop": "WoG",
+  "year": 2024,
+  "location": "Český Krumlov, Czech Republic",
+  "dates": "January 7-20, 2024",
+  "weeks": [
+    {
+      "week": 1,
+      "sessions": [
+        {
+          "date": "8th Jan",
+          "time": "09-12",
+          "topic": "Introduction and Orientation",
+          "type": "orientation",
+          "location": "Town Theatre",
+          "presenters": [
+            "Josie Paris",
+            "Daniel Kintzl"
+          ]
+        },
+        {
+          "date": "8th Jan",
+          "time": "14-17",
+          "topic": "Sequencing Technology",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Scott Handley"
+          ]
+        },
+        {
+          "date": "10th Jan",
+          "time": "09-12",
+          "topic": "Alignment",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Rayan Chikhi"
+          ]
+        },
+        {
+          "date": "10th Jan",
+          "time": "14-17",
+          "topic": "Genome Annotation",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Katharina Hoff"
+          ]
+        },
+        {
+          "date": "10th Jan",
+          "time": "19-22",
+          "topic": "Genome Annotation practical",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Katharina Hoff"
+          ]
+        },
+        {
+          "date": "11th Jan",
+          "time": "09-12",
+          "topic": "Genome Assembly",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Camille Marchet",
+            "Antoine Limasset"
+          ]
+        },
+        {
+          "date": "11th Jan",
+          "time": "14-17",
+          "topic": "Genome Assembly practical",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Camille Marchet",
+            "Antoine Limasset"
+          ]
+        },
+        {
+          "date": "12th Jan",
+          "time": "09-12",
+          "topic": "Variant Calling",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Erik Garrison"
+          ]
+        },
+        {
+          "date": "12th Jan",
+          "time": "14-17",
+          "topic": "Structural Variant Calling",
+          "type": "lecture",
+          "location": "House of Prelate",
+          "presenters": [
+            "Fritz Sedlazeck"
+          ]
+        },
+        {
+          "date": "12th Jan",
+          "time": "19-22",
+          "topic": "Genomics Adventure",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Guy Leonard"
+          ]
+        },
+        {
+          "date": "13th Jan",
+          "time": "09-12",
+          "topic": "Lies, Damn Lies, and Genomics",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Chris Wheat"
+          ]
+        },
+        {
+          "date": "13th Jan",
+          "time": "14-17",
+          "topic": "Pangenomics",
+          "type": "lecture",
+          "location": "House of Prelate",
+          "presenters": [
+            "Erik Garrison"
+          ]
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "sessions": [
+        {
+          "date": "15th Jan",
+          "time": "09-12",
+          "topic": "Transcriptomics and Single-cell Transcriptomics",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Brian Haas"
+          ]
+        },
+        {
+          "date": "15th Jan",
+          "time": "19-22",
+          "topic": "Analysis of RNASeq Data",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Rachel Steward"
+          ]
+        },
+        {
+          "date": "16th Jan",
+          "time": "09-12",
+          "topic": "Genomics in the Ocean",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Sonya Dyhrman"
+          ]
+        },
+        {
+          "date": "16th Jan",
+          "time": "14-17",
+          "topic": "Comparative Genomics",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Oleg Simakov"
+          ]
+        },
+        {
+          "date": "16th Jan",
+          "time": "19-22",
+          "topic": "Microbiome Analysis",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "David Barnett"
+          ]
+        },
+        {
+          "date": "17th Jan",
+          "time": "09-12",
+          "topic": "The wonders of genome assembly!",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Marcela Uliano-Silva"
+          ]
+        },
+        {
+          "date": "17th Jan",
+          "time": "14-17",
+          "topic": "Population Genomics",
+          "type": "lecture",
+          "location": "House of Prelate",
+          "presenters": [
+            "Vincenza Colonna"
+          ]
+        },
+        {
+          "date": "18th Jan",
+          "time": "09-12",
+          "topic": "Genome Structural Variation",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Evan Eichler"
+          ]
+        },
+        {
+          "date": "18th Jan",
+          "time": "14-17",
+          "topic": "Best Practices in Handling Genomic Data",
+          "type": "lecture",
+          "location": "House of Prelate",
+          "presenters": [
+            "Dag Ahrén"
+          ]
+        },
+        {
+          "date": "18th Jan",
+          "time": "19-22",
+          "topic": "Phylogenomics",
+          "type": "lecture",
+          "location": "House of Prelate",
+          "presenters": [
+            "Rosa Fernández"
+          ]
+        },
+        {
+          "date": "19th Jan",
+          "time": "09-12",
+          "topic": "BIG DATA",
+          "type": "lecture",
+          "location": "House of Prelate",
+          "presenters": [
+            "Rayan Chikhi"
+          ]
+        }
+      ]
+    }
+  ]
+}

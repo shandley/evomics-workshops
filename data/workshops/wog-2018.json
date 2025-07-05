@@ -1,0 +1,279 @@
+{
+  "workshop": "WoG",
+  "year": 2018,
+  "location": "Český Krumlov, Czech Republic",
+  "dates": "January 7-20, 2018",
+  "weeks": [
+    {
+      "week": 1,
+      "sessions": [
+        {
+          "date": "8th Jan",
+          "time": "09-12",
+          "topic": "Introduction and Orientation",
+          "type": "orientation",
+          "location": "Town Theatre",
+          "presenters": [
+            "Scott Handley"
+          ]
+        },
+        {
+          "date": "8th Jan",
+          "time": "14-17",
+          "topic": "Marine Ecosystem Phytoplankton",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Sonya Dyhrman"
+          ]
+        },
+        {
+          "date": "8th Jan",
+          "time": "19:30-22",
+          "topic": "Scientific Speed Networking",
+          "type": "orientation",
+          "location": "Town Theatre",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "9th Jan",
+          "time": "09-12",
+          "topic": "Sequencing Technology History",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Julian Catchen"
+          ]
+        },
+        {
+          "date": "9th Jan",
+          "time": "14-17",
+          "topic": "Computer Lab Introduction",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Guy Leonard",
+            "Julian Catchen"
+          ]
+        },
+        {
+          "date": "9th Jan",
+          "time": "19-22",
+          "topic": "Introduction to UNIX",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Julian Catchen"
+          ]
+        },
+        {
+          "date": "10th Jan",
+          "time": "09-12",
+          "topic": "Genomics Study Design",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Mike Zody"
+          ]
+        },
+        {
+          "date": "10th Jan",
+          "time": "14-17",
+          "topic": "Sequence Data Quality Control",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "11th Jan",
+          "time": "09-12",
+          "topic": "Read Alignment",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "11th Jan",
+          "time": "14-17",
+          "topic": "Genome Assembly",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Workshop Team"
+          ]
+        },
+        {
+          "date": "12th Jan",
+          "time": "09-12",
+          "topic": "Evolutionary Genomics",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Antonis Rokas"
+          ]
+        },
+        {
+          "date": "12th Jan",
+          "time": "14-17",
+          "topic": "Evolutionary Genomics Lab",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Antonis Rokas"
+          ]
+        },
+        {
+          "date": "13th Jan",
+          "time": "09-12",
+          "topic": "Genome Structural Variation",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Evan Eichler"
+          ]
+        },
+        {
+          "date": "13th Jan",
+          "time": "14-17",
+          "topic": "Structural Variation Lab",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Evan Eichler"
+          ]
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "sessions": [
+        {
+          "date": "15th Jan",
+          "time": "09-12",
+          "topic": "RAD-seq",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Bill Cresko"
+          ]
+        },
+        {
+          "date": "15th Jan",
+          "time": "14-17",
+          "topic": "Stacks Lab",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Julian Catchen"
+          ]
+        },
+        {
+          "date": "16th Jan",
+          "time": "09-12",
+          "topic": "Microbiome for Evolutionary Biology",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Sarah Hird"
+          ]
+        },
+        {
+          "date": "16th Jan",
+          "time": "14-17",
+          "topic": "QIIME 2 Lab",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Daniel McDonald"
+          ]
+        },
+        {
+          "date": "17th Jan",
+          "time": "09-12",
+          "topic": "Transcriptomics",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Brian Haas"
+          ]
+        },
+        {
+          "date": "17th Jan",
+          "time": "14-17",
+          "topic": "Transcriptomics Lab",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Brian Haas"
+          ]
+        },
+        {
+          "date": "18th Jan",
+          "time": "09-12",
+          "topic": "Introduction to R",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Scott Handley"
+          ]
+        },
+        {
+          "date": "18th Jan",
+          "time": "14-17",
+          "topic": "Single-cell Transcriptomics",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Karthik Shekhar"
+          ]
+        },
+        {
+          "date": "18th Jan",
+          "time": "19-22",
+          "topic": "Single-cell Transcriptomics Lab",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Karthik Shekhar"
+          ]
+        },
+        {
+          "date": "19th Jan",
+          "time": "09-12",
+          "topic": "Arctic Marine Mammals",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Eline Lorenzen"
+          ]
+        },
+        {
+          "date": "19th Jan",
+          "time": "14-17",
+          "topic": "Genomics Methodology",
+          "type": "lecture",
+          "location": "Town Theatre",
+          "presenters": [
+            "Chris Wheat"
+          ]
+        },
+        {
+          "date": "20th Jan",
+          "time": "09-12",
+          "topic": "Final Open Lab",
+          "type": "practical",
+          "location": "House of Prelate",
+          "presenters": [
+            "Workshop Team"
+          ]
+        }
+      ]
+    }
+  ]
+}
