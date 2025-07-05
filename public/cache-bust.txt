@@ -1,0 +1,4 @@
+Cache bust timestamp: 2025-07-05T23:45:00Z
+Build version: v3-cache-fix
+Deployed: Hide empty workshops fix
+Purpose: Force GitHub Pages CDN cache invalidation
