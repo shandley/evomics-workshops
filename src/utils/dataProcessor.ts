@@ -100,8 +100,11 @@ export function calculateArchiveStatistics(): ArchiveStatistics {
     stats.topics = Array.from(stats.topics as Set<string>);
   });
 
+  // Count only workshops that have actual sessions
+  const activeWorkshops = Object.keys(workshopStats).filter(id => workshopStats[id].sessions > 0);
+
   return {
-    totalWorkshops: Object.keys(workshops).length,
+    totalWorkshops: activeWorkshops.length,
     totalSessions: sessions.length,
     totalPresenters: allPresenters.size,
     totalYears: allYears.size,
