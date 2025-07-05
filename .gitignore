@@ -31,7 +31,7 @@ dist-ssr
 .env.production.local
 
 # Dependencies
-package-lock.json
+# package-lock.json (commented out for GitHub Actions)
 
 # Build outputs
 build/
