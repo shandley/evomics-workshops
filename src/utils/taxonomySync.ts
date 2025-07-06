@@ -56,31 +56,20 @@ interface UnifiedTaxonomy {
 
 /**
  * Load faculty scientific topics from JSON file
+ * Browser-safe version - returns empty dataset for now
  */
 async function loadFacultyTopics(): Promise<FacultyTopicsData> {
-  try {
-    const fs = await import('fs/promises');
-    const path = await import('path');
-    
-    const facultyTopicsPath = path.join(
-      __dirname, 
-      '../../../faculty-app/src/data/taxonomy/scientificTopics.json'
-    );
-    
-    const data = await fs.readFile(facultyTopicsPath, 'utf-8');
-    return JSON.parse(data) as FacultyTopicsData;
-  } catch (error) {
-    console.warn('Could not load faculty topics, using empty dataset:', error);
-    return {
-      metadata: {
-        version: '1.0.0',
-        lastUpdated: new Date().toISOString(),
-        totalTopics: 0,
-        levels: 0
-      },
-      topics: {}
-    };
-  }
+  // Browser-safe implementation - returns empty dataset
+  // For actual sync, use the Node.js version in scripts/
+  return {
+    metadata: {
+      version: '1.0.0',
+      lastUpdated: new Date().toISOString(),
+      totalTopics: 0,
+      levels: 0
+    },
+    topics: {}
+  };
 }
 
 /**
