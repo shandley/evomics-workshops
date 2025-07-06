@@ -328,7 +328,7 @@ const SessionDetail: React.FC = () => {
           {relatedSessions.length > 0 && (
             <div className="bg-white rounded-lg shadow p-6">
               <h3 className="text-lg font-bold text-gray-900 mb-4">
-                More from {session.presenters[0]}
+                More from {convertFacultyIdToName(session.presenters[0])}
               </h3>
               
               <div className="space-y-3">
