@@ -58,13 +58,13 @@ export interface CalendarData {
   };
 }
 
-// Color schemes for heatmaps
+// Color schemes for heatmaps with better contrast
 export const DENSITY_COLORS = {
-  none: '#f9fafb',     // Gray-50
-  low: '#dbeafe',      // Blue-100
-  medium: '#93c5fd',   // Blue-300
-  high: '#3b82f6',     // Blue-500
-  peak: '#1d4ed8'      // Blue-700
+  none: '#ffffff',     // White
+  low: '#f0f9ff',      // Blue-50 - very light
+  medium: '#e0f2fe',   // Sky-100 - light
+  high: '#bae6fd',     // Sky-200 - medium
+  peak: '#7dd3fc'      // Sky-300 - strong but readable
 } as const;
 
 export const WORKSHOP_COLORS = {

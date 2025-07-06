@@ -288,17 +288,20 @@ function CalendarGrid({ view, data, onItemClick, workshops }: CalendarGridProps)
           <div
             key={year.year}
             onClick={() => onItemClick(year)}
-            className="bg-white rounded-lg shadow-md p-4 cursor-pointer hover:shadow-lg transition-all transform hover:scale-105"
-            style={{ backgroundColor: DENSITY_COLORS[year.density] }}
+            className="bg-white rounded-lg shadow-md border border-gray-200 p-4 cursor-pointer hover:shadow-lg transition-all transform hover:scale-105"
+            style={{ 
+              backgroundColor: DENSITY_COLORS[year.density],
+              borderLeft: year.density !== 'none' ? `4px solid #2563eb` : '4px solid transparent'
+            }}
           >
-            <div className="text-lg font-bold text-gray-900">{year.year}</div>
-            <div className="text-sm text-gray-600">{year.totalSessions} sessions</div>
-            <div className="text-xs text-gray-500">{year.uniquePresenters} presenters</div>
-            <div className="flex space-x-1 mt-2">
+            <div className="text-xl font-bold text-gray-900 mb-1">{year.year}</div>
+            <div className="text-sm font-medium text-gray-700 mb-1">{year.totalSessions} sessions</div>
+            <div className="text-xs text-gray-600 mb-3">{year.uniquePresenters} presenters</div>
+            <div className="flex space-x-1">
               {year.workshopTypes.map(workshop => (
                 <div
                   key={workshop}
-                  className="w-3 h-3 rounded"
+                  className="w-4 h-4 rounded-full border border-white shadow-sm"
                   style={{ backgroundColor: WORKSHOP_COLORS[workshop as keyof typeof WORKSHOP_COLORS] || '#6b7280' }}
                   title={workshops[workshop]?.shortName || workshop}
                 />
@@ -318,19 +321,22 @@ function CalendarGrid({ view, data, onItemClick, workshops }: CalendarGridProps)
           <div
             key={`${month.year}-${month.month}`}
             onClick={() => onItemClick(month)}
-            className="bg-white rounded-lg shadow-md p-4 cursor-pointer hover:shadow-lg transition-all transform hover:scale-105"
-            style={{ backgroundColor: DENSITY_COLORS[month.density] }}
+            className="bg-white rounded-lg shadow-md border border-gray-200 p-4 cursor-pointer hover:shadow-lg transition-all transform hover:scale-105"
+            style={{ 
+              backgroundColor: DENSITY_COLORS[month.density],
+              borderLeft: month.density !== 'none' ? `4px solid #2563eb` : '4px solid transparent'
+            }}
           >
-            <div className="text-lg font-bold text-gray-900">{month.name}</div>
-            <div className="text-sm text-gray-600">{month.totalSessions} sessions</div>
+            <div className="text-lg font-bold text-gray-900 mb-1">{month.name}</div>
+            <div className="text-sm font-medium text-gray-700 mb-1">{month.totalSessions} sessions</div>
             {month.totalSessions > 0 && (
               <>
-                <div className="text-xs text-gray-500">{month.uniquePresenters} presenters</div>
-                <div className="flex space-x-1 mt-2">
+                <div className="text-xs text-gray-600 mb-3">{month.uniquePresenters} presenters</div>
+                <div className="flex space-x-1">
                   {month.workshopTypes.map(workshop => (
                     <div
                       key={workshop}
-                      className="w-3 h-3 rounded"
+                      className="w-4 h-4 rounded-full border border-white shadow-sm"
                       style={{ backgroundColor: WORKSHOP_COLORS[workshop as keyof typeof WORKSHOP_COLORS] || '#6b7280' }}
                       title={workshops[workshop]?.shortName || workshop}
                     />
@@ -544,11 +550,11 @@ export function InteractiveCalendar({ sessions, workshops, onSessionClick }: Int
           {/* Session Density */}
           <div>
             <h4 className="text-xs font-medium text-gray-700 mb-2">Session Density</h4>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-3">
               {Object.entries(DENSITY_COLORS).map(([level, color]) => (
                 <div key={level} className="flex items-center space-x-1">
                   <div 
-                    className="w-4 h-4 rounded" 
+                    className="w-4 h-4 rounded border border-gray-300" 
                     style={{ backgroundColor: color }}
                   />
                   <span className="text-xs text-gray-600 capitalize">{level}</span>
@@ -564,7 +570,7 @@ export function InteractiveCalendar({ sessions, workshops, onSessionClick }: Int
               {Object.entries(WORKSHOP_COLORS).map(([workshop, color]) => (
                 <div key={workshop} className="flex items-center space-x-1">
                   <div 
-                    className="w-4 h-4 rounded" 
+                    className="w-4 h-4 rounded-full border border-white shadow-sm" 
                     style={{ backgroundColor: color }}
                   />
                   <span className="text-xs text-gray-600">{workshops[workshop]?.shortName || workshop.toUpperCase()}</span>
