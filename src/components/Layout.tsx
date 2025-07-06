@@ -1,5 +1,6 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useSearchActions } from '../contexts/SearchContext';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -7,16 +8,29 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const location = useLocation();
+  const navigate = useNavigate();
+  const { setQuery } = useSearchActions();
+  const [headerSearch, setHeaderSearch] = useState('');
 
   const navigation = [
     { name: 'Dashboard', href: '/dashboard', icon: '📊' },
     { name: 'Calendar', href: '/timeline', icon: '📅' },
-    { name: 'Sessions', href: '/sessions', icon: '🔍' },
+    { name: 'Sessions', href: '/sessions', icon: '📚' },
     { name: 'Presenters', href: '/presenters', icon: '👨‍🏫' },
+    { name: 'Search', href: '/search', icon: '🔍' },
     { name: 'About', href: '/about', icon: 'ℹ️' },
   ];
 
   const isActive = (href: string) => location.pathname === href;
+
+  const handleHeaderSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (headerSearch.trim()) {
+      setQuery(headerSearch.trim());
+      navigate('/search');
+      setHeaderSearch('');
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50">
@@ -50,8 +64,26 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               ))}
             </nav>
 
-            {/* External Links */}
-            <div className="flex space-x-4">
+            {/* Header Search & External Links */}
+            <div className="flex items-center space-x-4">
+              {/* Quick Search */}
+              <form onSubmit={handleHeaderSearch} className="hidden lg:block">
+                <div className="relative">
+                  <input
+                    type="text"
+                    value={headerSearch}
+                    onChange={(e) => setHeaderSearch(e.target.value)}
+                    placeholder="Quick search..."
+                    className="w-64 px-3 py-1 pl-8 text-sm text-gray-900 placeholder-gray-400 bg-white/20 border border-white/30 rounded-md focus:outline-none focus:ring-2 focus:ring-white/50 focus:bg-white focus:text-gray-900"
+                  />
+                  <div className="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none">
+                    <svg className="h-4 w-4 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                  </div>
+                </div>
+              </form>
+
               <a 
                 href="https://shandley.github.io/evomics-faculty/"
                 target="_blank"
