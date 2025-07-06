@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSearchActions } from '../contexts/SearchContext';
+import { UnifiedNavigation } from './UnifiedNavigation';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -32,98 +33,64 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     }
   };
 
+  const handleUniversalSearch = (query: string) => {
+    setQuery(query);
+    navigate('/search');
+  };
+
+  const customNavItems = navigation.map(item => ({
+    label: item.name,
+    path: item.href
+  }));
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50">
-      {/* Header */}
-      <header className="bg-gradient-to-r from-primary-600 to-primary-700 shadow-lg">
+      {/* Unified Navigation */}
+      <UnifiedNavigation 
+        currentSite="workshops" 
+        onUniversalSearch={handleUniversalSearch}
+        customNavItems={customNavItems}
+      />
+
+      {/* Secondary Navigation for Site-Specific Items */}
+      <div className="bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <Link to="/dashboard" className="flex items-center">
-                <h1 className="text-2xl font-bold text-white hover:text-primary-100 transition-colors">
-                  📚 Evomics Workshop Archive
-                </h1>
-              </Link>
-            </div>
-            
-            {/* Main Navigation */}
-            <nav className="hidden md:flex space-x-8">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                    isActive(item.href)
-                      ? 'bg-white/20 text-white'
-                      : 'text-primary-100 hover:text-white hover:bg-white/10'
-                  }`}
-                >
-                  <span>{item.icon}</span>
-                  <span>{item.name}</span>
-                </Link>
-              ))}
-            </nav>
-
-            {/* Header Search & External Links */}
-            <div className="flex items-center space-x-4">
-              {/* Quick Search */}
-              <form onSubmit={handleHeaderSearch} className="hidden lg:block">
-                <div className="relative">
-                  <input
-                    type="text"
-                    value={headerSearch}
-                    onChange={(e) => setHeaderSearch(e.target.value)}
-                    placeholder="Quick search..."
-                    className="w-64 px-3 py-1 pl-8 text-sm text-gray-900 placeholder-gray-400 bg-white/20 border border-white/30 rounded-md focus:outline-none focus:ring-2 focus:ring-white/50 focus:bg-white focus:text-gray-900"
-                  />
-                  <div className="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none">
-                    <svg className="h-4 w-4 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                  </div>
-                </div>
-              </form>
-
-              <a 
-                href="https://shandley.github.io/evomics-faculty/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary-100 hover:text-white transition-colors text-sm"
-              >
-                👥 Faculty
-              </a>
-              <a 
-                href="https://shandley.github.io/evomics-students/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary-100 hover:text-white transition-colors text-sm"
-              >
-                🎓 Students
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        <div className="md:hidden border-t border-primary-500 bg-primary-700">
-          <nav className="px-4 py-2 space-x-4 overflow-x-auto">
+          <nav className="flex space-x-8 py-4">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`inline-flex items-center space-x-1 px-3 py-1 rounded-md text-sm font-medium transition-colors whitespace-nowrap ${
+                className={`flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                   isActive(item.href)
-                    ? 'bg-white/20 text-white'
-                    : 'text-primary-100 hover:text-white hover:bg-white/10'
+                    ? 'bg-primary-50 text-primary-700 border border-primary-200'
+                    : 'text-gray-700 hover:text-primary-700 hover:bg-gray-50'
                 }`}
               >
                 <span>{item.icon}</span>
                 <span>{item.name}</span>
               </Link>
             ))}
+            
+            {/* Quick Search in Secondary Nav */}
+            <form onSubmit={handleHeaderSearch} className="ml-auto">
+              <div className="relative">
+                <input
+                  type="text"
+                  value={headerSearch}
+                  onChange={(e) => setHeaderSearch(e.target.value)}
+                  placeholder="Quick search sessions..."
+                  className="w-64 px-3 py-2 pl-8 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                />
+                <div className="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none">
+                  <svg className="h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </div>
+              </div>
+            </form>
           </nav>
         </div>
-      </header>
+      </div>
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
