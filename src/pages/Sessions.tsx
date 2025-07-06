@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { getAllSessions, getFilterOptions, searchSessions, getWorkshops, loadAllWorkshopData } from '../utils/dataProcessor';
 import { processPresenterProfiles, searchPresentersByExpertise } from '../utils/presenterProcessor';
 import { convertFacultyIdToName } from '../utils/facultyHelper';
+import { HierarchicalExpertiseFilter } from '../components/HierarchicalExpertiseFilter';
+import { mapExpertiseToTaxonomy, findNodeById, EXPERTISE_TAXONOMY } from '../utils/expertiseTaxonomy';
 import type { SearchFilters, SessionDetail } from '../types';
 
 const Sessions: React.FC = () => {
@@ -16,15 +18,6 @@ const Sessions: React.FC = () => {
     return processPresenterProfiles(workshopData);
   }, []);
 
-  // Get unique expertise areas for filtering
-  const expertiseOptions = useMemo(() => {
-    const areas = new Set<string>();
-    Object.values(presenterDirectory).forEach(presenter => {
-      presenter.expertise.primaryAreas.forEach(area => areas.add(area));
-      presenter.expertise.techniques.forEach(technique => areas.add(technique));
-    });
-    return Array.from(areas).sort();
-  }, [presenterDirectory]);
 
   const [filters, setFilters] = useState<SearchFilters>({
     search: '',
@@ -35,7 +28,8 @@ const Sessions: React.FC = () => {
     topic: [],
   });
 
-  const [expertiseFilter, setExpertiseFilter] = useState<string>('');
+  const [expertiseFilter, setExpertiseFilter] = useState<string[]>([]);
+  const [showExpertiseFilter, setShowExpertiseFilter] = useState(false);
 
   const [sortBy, setSortBy] = useState<'date' | 'topic' | 'presenter'>('date');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
@@ -48,17 +42,48 @@ const Sessions: React.FC = () => {
       presenter: filters.presenter,
     });
 
-    // Apply expertise filtering
-    if (expertiseFilter) {
-      const expertsInArea = searchPresentersByExpertise(expertiseFilter, presenterDirectory);
-      const expertNames = new Set(expertsInArea.map(p => p.name.toLowerCase()));
+    // Apply expertise filtering using taxonomy
+    if (expertiseFilter.length > 0) {
+      const expertsInAreas = new Set<string>();
+      
+      // Find all presenters that match the selected expertise areas
+      Object.values(presenterDirectory).forEach(presenter => {
+        // Map presenter's existing expertise to taxonomy
+        const presenterExpertise = [
+          ...presenter.expertise.primaryAreas,
+          ...presenter.expertise.techniques
+        ];
+        const mappedExpertise = mapExpertiseToTaxonomy(presenterExpertise);
+        
+        // Check if any selected expertise matches
+        const hasMatchingExpertise = expertiseFilter.some(selectedId => {
+          if (mappedExpertise.includes(selectedId)) return true;
+          
+          // Also check text-based matching for non-taxonomy items
+          const node = findNodeById(EXPERTISE_TAXONOMY, selectedId);
+          if (node) {
+            const searchTerms = [node.label, ...(node.aliases || [])];
+            return searchTerms.some(term => 
+              presenterExpertise.some(exp => 
+                exp.toLowerCase().includes(term.toLowerCase()) ||
+                term.toLowerCase().includes(exp.toLowerCase())
+              )
+            );
+          }
+          return false;
+        });
+        
+        if (hasMatchingExpertise) {
+          expertsInAreas.add(presenter.name.toLowerCase());
+        }
+      });
       
       result = result.filter(session => 
         session.presenters.some(presenter => 
-          expertNames.has(presenter.toLowerCase())
+          expertsInAreas.has(presenter.toLowerCase())
         ) ||
         (session.coPresenters || []).some(presenter => 
-          expertNames.has(presenter.toLowerCase())
+          expertsInAreas.has(presenter.toLowerCase())
         )
       );
     }
@@ -108,7 +133,7 @@ const Sessions: React.FC = () => {
       presenter: [],
       topic: [],
     });
-    setExpertiseFilter('');
+    setExpertiseFilter([]);
   };
 
   const getWorkshopColor = (workshopId: string) => {
@@ -156,129 +181,136 @@ const Sessions: React.FC = () => {
       </div>
 
       {/* Filters */}
-      <div className="bg-white/80 backdrop-blur rounded-xl shadow-lg p-6 border border-white/20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {/* Search */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Search</label>
-            <input
-              type="text"
-              value={filters.search}
-              onChange={(e) => handleFilterChange('search', e.target.value)}
-              placeholder="Search topics, presenters..."
-              className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        {/* Left: Basic Filters */}
+        <div className="lg:col-span-2">
+          <div className="bg-white/80 backdrop-blur rounded-xl shadow-lg p-6 border border-white/20">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+              {/* Search */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Search</label>
+                <input
+                  type="text"
+                  value={filters.search}
+                  onChange={(e) => handleFilterChange('search', e.target.value)}
+                  placeholder="Search topics, presenters..."
+                  className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
 
-          {/* Year */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Year</label>
-            <select
-              value={filters.year || ''}
-              onChange={(e) => handleFilterChange('year', e.target.value ? parseInt(e.target.value) : null)}
-              className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            >
-              <option value="">All Years</option>
-              {filterOptions.years.map(year => (
-                <option key={year} value={year}>{year}</option>
-              ))}
-            </select>
-          </div>
+              {/* Year */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Year</label>
+                <select
+                  value={filters.year || ''}
+                  onChange={(e) => handleFilterChange('year', e.target.value ? parseInt(e.target.value) : null)}
+                  className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                  <option value="">All Years</option>
+                  {filterOptions.years.map(year => (
+                    <option key={year} value={year}>{year}</option>
+                  ))}
+                </select>
+              </div>
 
-          {/* Workshop */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Workshop</label>
-            <div className="space-y-1 max-h-24 overflow-y-auto">
-              {filterOptions.workshops.map(workshopId => (
-                <label key={workshopId} className="flex items-center text-sm">
-                  <input
-                    type="checkbox"
-                    checked={filters.workshop.includes(workshopId)}
-                    onChange={() => toggleArrayFilter('workshop', workshopId)}
-                    className="mr-2"
-                  />
-                  {workshops[workshopId]?.shortName || workshopId}
-                </label>
-              ))}
-            </div>
-          </div>
-
-          {/* Session Type */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Session Type</label>
-            <div className="space-y-1 max-h-24 overflow-y-auto">
-              {filterOptions.sessionTypes.map(type => (
-                <label key={type} className="flex items-center text-sm">
-                  <input
-                    type="checkbox"
-                    checked={filters.sessionType.includes(type)}
-                    onChange={() => toggleArrayFilter('sessionType', type)}
-                    className="mr-2"
-                  />
-                  {type}
-                </label>
-              ))}
-            </div>
-          </div>
-
-          {/* Presenter Expertise */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Presenter Expertise
-              <span className="ml-1 text-xs text-gray-500">(filter by research area)</span>
-            </label>
-            <select
-              value={expertiseFilter}
-              onChange={(e) => setExpertiseFilter(e.target.value)}
-              className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            >
-              <option value="">All Expertise Areas</option>
-              {expertiseOptions.map(area => (
-                <option key={area} value={area}>{area}</option>
-              ))}
-            </select>
-          </div>
-
-          {/* Presenter Filter */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Presenter Name
-              <Link 
-                to="/presenters" 
-                className="ml-2 text-xs text-blue-600 hover:text-blue-800"
-              >
-                Browse all →
-              </Link>
-            </label>
-            <div className="space-y-1 max-h-24 overflow-y-auto">
-              {filterOptions.presenters.slice(0, 10).map(presenter => (
-                <label key={presenter} className="flex items-center text-sm">
-                  <input
-                    type="checkbox"
-                    checked={filters.presenter.includes(presenter)}
-                    onChange={() => toggleArrayFilter('presenter', presenter)}
-                    className="mr-2"
-                  />
-                  <span className="truncate">{convertFacultyIdToName(presenter)}</span>
-                </label>
-              ))}
-              {filterOptions.presenters.length > 10 && (
-                <div className="text-xs text-gray-500 pt-1">
-                  ... and {filterOptions.presenters.length - 10} more
+              {/* Workshop */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Workshop</label>
+                <div className="space-y-1 max-h-24 overflow-y-auto">
+                  {filterOptions.workshops.map(workshopId => (
+                    <label key={workshopId} className="flex items-center text-sm">
+                      <input
+                        type="checkbox"
+                        checked={filters.workshop.includes(workshopId)}
+                        onChange={() => toggleArrayFilter('workshop', workshopId)}
+                        className="mr-2"
+                      />
+                      {workshops[workshopId]?.shortName || workshopId}
+                    </label>
+                  ))}
                 </div>
-              )}
+              </div>
+
+              {/* Session Type */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Session Type</label>
+                <div className="space-y-1 max-h-24 overflow-y-auto">
+                  {filterOptions.sessionTypes.map(type => (
+                    <label key={type} className="flex items-center text-sm">
+                      <input
+                        type="checkbox"
+                        checked={filters.sessionType.includes(type)}
+                        onChange={() => toggleArrayFilter('sessionType', type)}
+                        className="mr-2"
+                      />
+                      {type}
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              {/* Presenter Filter */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Presenter Name
+                  <Link 
+                    to="/presenters" 
+                    className="ml-2 text-xs text-blue-600 hover:text-blue-800"
+                  >
+                    Browse all →
+                  </Link>
+                </label>
+                <div className="space-y-1 max-h-24 overflow-y-auto">
+                  {filterOptions.presenters.slice(0, 8).map(presenter => (
+                    <label key={presenter} className="flex items-center text-sm">
+                      <input
+                        type="checkbox"
+                        checked={filters.presenter.includes(presenter)}
+                        onChange={() => toggleArrayFilter('presenter', presenter)}
+                        className="mr-2"
+                      />
+                      <span className="truncate">{convertFacultyIdToName(presenter)}</span>
+                    </label>
+                  ))}
+                  {filterOptions.presenters.length > 8 && (
+                    <div className="text-xs text-gray-500 pt-1">
+                      ... and {filterOptions.presenters.length - 8} more
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Filter Summary and Clear */}
+            <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+              <p className="text-sm text-gray-600">
+                Showing {filteredSessions.length} of {allSessions.length} sessions
+                {expertiseFilter.length > 0 && ` with ${expertiseFilter.length} expertise filter${expertiseFilter.length === 1 ? '' : 's'}`}
+              </p>
+              <div className="flex items-center space-x-3">
+                <button
+                  onClick={() => setShowExpertiseFilter(!showExpertiseFilter)}
+                  className="lg:hidden text-sm text-blue-600 hover:text-blue-800"
+                >
+                  {showExpertiseFilter ? 'Hide' : 'Show'} Expertise Filter
+                </button>
+                <button
+                  onClick={clearFilters}
+                  className="text-sm text-blue-600 hover:text-blue-800"
+                >
+                  Clear all filters
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Clear Filters */}
-        <div className="mt-4 flex justify-end">
-          <button
-            onClick={clearFilters}
-            className="text-sm text-blue-600 hover:text-blue-800"
-          >
-            Clear all filters
-          </button>
+        {/* Right: Hierarchical Expertise Filter */}
+        <div className={`${showExpertiseFilter ? 'block' : 'hidden lg:block'}`}>
+          <HierarchicalExpertiseFilter
+            selectedExpertise={expertiseFilter}
+            onExpertiseChange={setExpertiseFilter}
+          />
         </div>
       </div>
 
