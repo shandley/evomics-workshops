@@ -43,6 +43,7 @@ interface CalendarHeaderProps {
     sessionTypes: string[];
   };
   calendarData: CalendarData;
+  workshops: { [key: string]: Workshop };
 }
 
 function CalendarHeader({
@@ -55,7 +56,8 @@ function CalendarHeader({
   filters,
   onFiltersChange,
   filterOptions,
-  calendarData
+  calendarData,
+  workshops
 }: CalendarHeaderProps) {
   const getViewTitle = () => {
     switch (view) {
@@ -165,33 +167,86 @@ function CalendarHeader({
       </div>
 
       {/* Filters */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        {/* Workshop Status Filter */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Workshop Status
+          </label>
+          <div className="space-y-1">
+            <label className="flex items-center text-sm">
+              <input
+                type="radio"
+                name="workshopStatus"
+                checked={!filters.workshopStatus}
+                onChange={() => onFiltersChange({ ...filters, workshopStatus: undefined })}
+                className="mr-2"
+              />
+              All Workshops
+            </label>
+            <label className="flex items-center text-sm">
+              <input
+                type="radio"
+                name="workshopStatus"
+                checked={filters.workshopStatus === 'active'}
+                onChange={() => onFiltersChange({ ...filters, workshopStatus: 'active' })}
+                className="mr-2"
+              />
+              <span className="w-3 h-3 rounded-full bg-green-500 mr-2" />
+              Active Only
+            </label>
+            <label className="flex items-center text-sm">
+              <input
+                type="radio"
+                name="workshopStatus"
+                checked={filters.workshopStatus === 'historical'}
+                onChange={() => onFiltersChange({ ...filters, workshopStatus: 'historical' })}
+                className="mr-2"
+              />
+              <span className="w-3 h-3 rounded-full bg-gray-400 mr-2" />
+              Historical Only
+            </label>
+          </div>
+        </div>
+
         {/* Workshop Filter */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
             Workshop Series
           </label>
           <div className="space-y-1 max-h-20 overflow-y-auto">
-            {filterOptions.workshops.map(workshop => (
-              <label key={workshop} className="flex items-center text-sm">
-                <input
-                  type="checkbox"
-                  checked={filters.workshops.includes(workshop)}
-                  onChange={(e) => {
-                    const newWorkshops = e.target.checked
-                      ? [...filters.workshops, workshop]
-                      : filters.workshops.filter(w => w !== workshop);
-                    onFiltersChange({ ...filters, workshops: newWorkshops });
-                  }}
-                  className="mr-2"
-                />
-                <span 
-                  className="w-3 h-3 rounded mr-2" 
-                  style={{ backgroundColor: WORKSHOP_COLORS[workshop as keyof typeof WORKSHOP_COLORS] || '#6b7280' }}
-                />
-                {workshop.toUpperCase()}
-              </label>
-            ))}
+            {filterOptions.workshops.map(workshop => {
+              const workshopInfo = workshops[workshop];
+              const isActive = workshopInfo?.active;
+              return (
+                <label key={workshop} className="flex items-center text-sm">
+                  <input
+                    type="checkbox"
+                    checked={filters.workshops.includes(workshop)}
+                    onChange={(e) => {
+                      const newWorkshops = e.target.checked
+                        ? [...filters.workshops, workshop]
+                        : filters.workshops.filter(w => w !== workshop);
+                      onFiltersChange({ ...filters, workshops: newWorkshops });
+                    }}
+                    className="mr-2"
+                  />
+                  <span 
+                    className={`w-3 h-3 rounded mr-2 ${isActive ? '' : 'opacity-70 border-2 border-dashed'}`}
+                    style={{ 
+                      backgroundColor: WORKSHOP_COLORS[workshop as keyof typeof WORKSHOP_COLORS] || '#6b7280',
+                      borderColor: isActive ? 'transparent' : (WORKSHOP_COLORS[workshop as keyof typeof WORKSHOP_COLORS] || '#6b7280')
+                    }}
+                  />
+                  <span className={isActive ? '' : 'opacity-70'}>
+                    {workshop.toUpperCase()}
+                    {!isActive && (
+                      <span className="text-xs text-gray-500 ml-1">(Historical)</span>
+                    )}
+                  </span>
+                </label>
+              );
+            })}
           </div>
         </div>
 
@@ -298,14 +353,25 @@ function CalendarGrid({ view, data, onItemClick, workshops }: CalendarGridProps)
             <div className="text-sm font-medium text-gray-700 mb-1">{year.totalSessions} sessions</div>
             <div className="text-xs text-gray-600 mb-3">{year.uniquePresenters} presenters</div>
             <div className="flex space-x-1">
-              {year.workshopTypes.map(workshop => (
-                <div
-                  key={workshop}
-                  className="w-4 h-4 rounded-full border border-white shadow-sm"
-                  style={{ backgroundColor: WORKSHOP_COLORS[workshop as keyof typeof WORKSHOP_COLORS] || '#6b7280' }}
-                  title={workshops[workshop]?.shortName || workshop}
-                />
-              ))}
+              {year.workshopTypes.map(workshop => {
+                const workshopInfo = workshops[workshop];
+                const isActive = workshopInfo?.active;
+                return (
+                  <div
+                    key={workshop}
+                    className={`w-4 h-4 rounded-full border shadow-sm ${
+                      isActive 
+                        ? 'border-white' 
+                        : 'border-2 border-dashed opacity-70'
+                    }`}
+                    style={{ 
+                      backgroundColor: WORKSHOP_COLORS[workshop as keyof typeof WORKSHOP_COLORS] || '#6b7280',
+                      borderColor: isActive ? 'white' : (WORKSHOP_COLORS[workshop as keyof typeof WORKSHOP_COLORS] || '#6b7280')
+                    }}
+                    title={`${workshopInfo?.shortName || workshop} ${isActive ? '(Active)' : '(Historical)'}`}
+                  />
+                );
+              })}
             </div>
           </div>
         ))}
@@ -333,14 +399,25 @@ function CalendarGrid({ view, data, onItemClick, workshops }: CalendarGridProps)
               <>
                 <div className="text-xs text-gray-600 mb-3">{month.uniquePresenters} presenters</div>
                 <div className="flex space-x-1">
-                  {month.workshopTypes.map(workshop => (
-                    <div
-                      key={workshop}
-                      className="w-4 h-4 rounded-full border border-white shadow-sm"
-                      style={{ backgroundColor: WORKSHOP_COLORS[workshop as keyof typeof WORKSHOP_COLORS] || '#6b7280' }}
-                      title={workshops[workshop]?.shortName || workshop}
-                    />
-                  ))}
+                  {month.workshopTypes.map(workshop => {
+                    const workshopInfo = workshops[workshop];
+                    const isActive = workshopInfo?.active;
+                    return (
+                      <div
+                        key={workshop}
+                        className={`w-4 h-4 rounded-full border shadow-sm ${
+                          isActive 
+                            ? 'border-white' 
+                            : 'border-2 border-dashed opacity-70'
+                        }`}
+                        style={{ 
+                          backgroundColor: WORKSHOP_COLORS[workshop as keyof typeof WORKSHOP_COLORS] || '#6b7280',
+                          borderColor: isActive ? 'white' : (WORKSHOP_COLORS[workshop as keyof typeof WORKSHOP_COLORS] || '#6b7280')
+                        }}
+                        title={`${workshopInfo?.shortName || workshop} ${isActive ? '(Active)' : '(Historical)'}`}
+                      />
+                    );
+                  })}
                 </div>
               </>
             )}
@@ -417,13 +494,20 @@ function CalendarGrid({ view, data, onItemClick, workshops }: CalendarGridProps)
                   )}
                   {day.workshopTypes.length > 0 && (
                     <div className="flex space-x-1 mt-1">
-                      {day.workshopTypes.slice(0, 3).map(workshop => (
-                        <div
-                          key={workshop}
-                          className="w-2 h-2 rounded"
-                          style={{ backgroundColor: WORKSHOP_COLORS[workshop as keyof typeof WORKSHOP_COLORS] || '#6b7280' }}
-                        />
-                      ))}
+                      {day.workshopTypes.slice(0, 3).map(workshop => {
+                        const workshopInfo = workshops[workshop];
+                        const isActive = workshopInfo?.active;
+                        return (
+                          <div
+                            key={workshop}
+                            className={`w-2 h-2 rounded ${isActive ? '' : 'opacity-70 border border-dashed'}`}
+                            style={{ 
+                              backgroundColor: WORKSHOP_COLORS[workshop as keyof typeof WORKSHOP_COLORS] || '#6b7280',
+                              borderColor: isActive ? 'transparent' : (WORKSHOP_COLORS[workshop as keyof typeof WORKSHOP_COLORS] || '#6b7280')
+                            }}
+                          />
+                        );
+                      })}
                     </div>
                   )}
                 </div>
@@ -450,8 +534,8 @@ export function InteractiveCalendar({ sessions, workshops, onSessionClick }: Int
 
   // Process calendar data
   const calendarData = useMemo(() => {
-    return processCalendarData(sessions, filters);
-  }, [sessions, filters]);
+    return processCalendarData(sessions, filters, workshops);
+  }, [sessions, filters, workshops]);
 
   // Get view-specific data
   const viewData = useMemo(() => {
@@ -534,6 +618,7 @@ export function InteractiveCalendar({ sessions, workshops, onSessionClick }: Int
         onFiltersChange={setFilters}
         filterOptions={filterOptions}
         calendarData={calendarData}
+        workshops={workshops}
       />
 
       <CalendarGrid
@@ -566,16 +651,48 @@ export function InteractiveCalendar({ sessions, workshops, onSessionClick }: Int
           {/* Workshop Types */}
           <div>
             <h4 className="text-xs font-medium text-gray-700 mb-2">Workshop Series</h4>
-            <div className="flex flex-wrap gap-2">
-              {Object.entries(WORKSHOP_COLORS).map(([workshop, color]) => (
-                <div key={workshop} className="flex items-center space-x-1">
-                  <div 
-                    className="w-4 h-4 rounded-full border border-white shadow-sm" 
-                    style={{ backgroundColor: color }}
-                  />
-                  <span className="text-xs text-gray-600">{workshops[workshop]?.shortName || workshop.toUpperCase()}</span>
+            <div className="space-y-2">
+              {/* Active Workshops */}
+              <div>
+                <div className="text-xs font-medium text-green-700 mb-1">Active Series</div>
+                <div className="flex flex-wrap gap-2">
+                  {Object.entries(WORKSHOP_COLORS)
+                    .filter(([workshop]) => workshops[workshop]?.active)
+                    .map(([workshop, color]) => (
+                      <div key={workshop} className="flex items-center space-x-1">
+                        <div 
+                          className="w-4 h-4 rounded-full border border-white shadow-sm" 
+                          style={{ backgroundColor: color }}
+                        />
+                        <span className="text-xs text-gray-600">{workshops[workshop]?.shortName || workshop.toUpperCase()}</span>
+                      </div>
+                    ))}
                 </div>
-              ))}
+              </div>
+              
+              {/* Historical Workshops */}
+              <div>
+                <div className="text-xs font-medium text-gray-600 mb-1">Historical Series</div>
+                <div className="flex flex-wrap gap-2">
+                  {Object.entries(WORKSHOP_COLORS)
+                    .filter(([workshop]) => !workshops[workshop]?.active)
+                    .map(([workshop, color]) => (
+                      <div key={workshop} className="flex items-center space-x-1">
+                        <div 
+                          className="w-4 h-4 rounded-full border-2 border-dashed opacity-70 shadow-sm" 
+                          style={{ 
+                            backgroundColor: color,
+                            borderColor: color
+                          }}
+                        />
+                        <span className="text-xs text-gray-500 opacity-70">
+                          {workshops[workshop]?.shortName || workshop.toUpperCase()}
+                          {workshops[workshop]?.endYear && ` (${workshops[workshop].endYear})`}
+                        </span>
+                      </div>
+                    ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>

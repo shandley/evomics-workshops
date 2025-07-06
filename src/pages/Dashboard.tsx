@@ -48,52 +48,125 @@ const Dashboard: React.FC = () => {
 
       {/* Workshop Overview */}
       <div className="bg-white/80 backdrop-blur rounded-xl shadow-lg p-6 border border-white/20">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">Workshop Series</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {Object.entries(workshops).map(([id, workshop]) => {
-            const workshopStats = stats.workshopStats[id];
-            // Only show workshops that have actual session data
-            if (!workshopStats || workshopStats.sessions === 0) {
-              return null;
-            }
-            return (
-              <div key={id} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="font-bold text-gray-900">{workshop.shortName}</h3>
-                  <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                    workshop.active 
-                      ? 'bg-green-100 text-green-800' 
-                      : 'bg-gray-100 text-gray-600'
-                  }`}>
-                    {workshop.active ? 'Active' : 'Historical'}
-                  </span>
-                </div>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-2">{workshop.description}</p>
-                
-                {workshopStats && (
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-gray-500">Sessions:</span>
-                      <span className="font-medium">{workshopStats.sessions}</span>
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-2xl font-bold text-gray-900">Workshop Series</h2>
+          <div className="flex items-center space-x-4 text-sm text-gray-600">
+            <div className="flex items-center space-x-1">
+              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+              <span>Active</span>
+            </div>
+            <div className="flex items-center space-x-1">
+              <div className="w-3 h-3 bg-gray-400 rounded-full opacity-70"></div>
+              <span>Historical</span>
+            </div>
+          </div>
+        </div>
+        
+        {/* Active Workshops */}
+        <div className="mb-8">
+          <h3 className="text-lg font-semibold text-green-800 mb-4 flex items-center">
+            <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+            Active Workshop Series
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {Object.entries(workshops)
+              .filter(([id, workshop]) => {
+                const workshopStats = stats.workshopStats[id];
+                return workshop.active && workshopStats && workshopStats.sessions > 0;
+              })
+              .map(([id, workshop]) => {
+                const workshopStats = stats.workshopStats[id];
+                return (
+                  <div key={id} className="border-2 border-green-200 bg-green-50/30 rounded-lg p-4 hover:shadow-lg hover:border-green-300 transition-all transform hover:scale-105">
+                    <div className="flex items-center justify-between mb-3">
+                      <h4 className="font-bold text-gray-900">{workshop.shortName}</h4>
+                      <div className="flex items-center space-x-2">
+                        <span className="px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                          Active
+                        </span>
+                        <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                      </div>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-500">Presenters:</span>
-                      <span className="font-medium">{workshopStats.presenters}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-500">Years:</span>
-                      <span className="font-medium">
-                        {workshopStats.years.length > 0 
-                          ? `${Math.min(...workshopStats.years)}–${Math.max(...workshopStats.years)}`
-                          : 'No data'
-                        }
-                      </span>
-                    </div>
+                    <p className="text-gray-700 text-sm mb-4 line-clamp-2">{workshop.description}</p>
+                    
+                    {workshopStats && (
+                      <div className="space-y-2 text-sm">
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">Sessions:</span>
+                          <span className="font-semibold text-green-700">{workshopStats.sessions}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">Presenters:</span>
+                          <span className="font-semibold text-green-700">{workshopStats.presenters}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">Active Since:</span>
+                          <span className="font-semibold text-green-700">
+                            {workshop.startYear} ({new Date().getFullYear() - workshop.startYear} years)
+                          </span>
+                        </div>
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
-            );
-          })}
+                );
+              })}
+          </div>
+        </div>
+
+        {/* Historical Workshops */}
+        <div>
+          <h3 className="text-lg font-semibold text-gray-600 mb-4 flex items-center">
+            <div className="w-2 h-2 bg-gray-400 rounded-full mr-2 opacity-70"></div>
+            Historical Workshop Series
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {Object.entries(workshops)
+              .filter(([id, workshop]) => {
+                const workshopStats = stats.workshopStats[id];
+                return !workshop.active && workshopStats && workshopStats.sessions > 0;
+              })
+              .map(([id, workshop]) => {
+                const workshopStats = stats.workshopStats[id];
+                return (
+                  <div key={id} className="border-2 border-gray-200 bg-gray-50/30 rounded-lg p-4 hover:shadow-md hover:border-gray-300 transition-all opacity-75">
+                    <div className="flex items-center justify-between mb-3">
+                      <h4 className="font-bold text-gray-800">{workshop.shortName}</h4>
+                      <div className="flex items-center space-x-2">
+                        <span className="px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600">
+                          Historical
+                        </span>
+                        {workshop.endYear && (
+                          <span className="text-xs text-gray-500">
+                            Ended {workshop.endYear}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <p className="text-gray-600 text-sm mb-4 line-clamp-2">{workshop.description}</p>
+                    
+                    {workshopStats && (
+                      <div className="space-y-2 text-sm">
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">Sessions:</span>
+                          <span className="font-medium text-gray-600">{workshopStats.sessions}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">Presenters:</span>
+                          <span className="font-medium text-gray-600">{workshopStats.presenters}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">Duration:</span>
+                          <span className="font-medium text-gray-600">
+                            {workshop.startYear}–{workshop.endYear || 'Unknown'}
+                            {workshop.endYear && ` (${workshop.endYear - workshop.startYear + 1} years)`}
+                          </span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+          </div>
         </div>
       </div>
 

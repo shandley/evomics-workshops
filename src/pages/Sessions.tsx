@@ -30,6 +30,7 @@ const Sessions: React.FC = () => {
 
   const [expertiseFilter, setExpertiseFilter] = useState<string[]>([]);
   const [showExpertiseFilter, setShowExpertiseFilter] = useState(false);
+  const [workshopStatusFilter, setWorkshopStatusFilter] = useState<'active' | 'historical' | undefined>(undefined);
 
   const [sortBy, setSortBy] = useState<'date' | 'topic' | 'presenter'>('date');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
@@ -41,6 +42,21 @@ const Sessions: React.FC = () => {
       sessionType: filters.sessionType,
       presenter: filters.presenter,
     });
+
+    // Apply workshop status filtering
+    if (workshopStatusFilter) {
+      result = result.filter(session => {
+        const workshop = workshops[session.workshopId];
+        if (!workshop) return false;
+        
+        if (workshopStatusFilter === 'active') {
+          return workshop.active;
+        } else if (workshopStatusFilter === 'historical') {
+          return !workshop.active;
+        }
+        return true;
+      });
+    }
 
     // Apply expertise filtering using taxonomy
     if (expertiseFilter.length > 0) {
@@ -108,7 +124,7 @@ const Sessions: React.FC = () => {
     });
 
     return result;
-  }, [allSessions, filters, expertiseFilter, presenterDirectory, sortBy, sortOrder]);
+  }, [allSessions, filters, expertiseFilter, presenterDirectory, sortBy, sortOrder, workshopStatusFilter, workshops]);
 
   const handleFilterChange = (key: keyof SearchFilters, value: any) => {
     setFilters(prev => ({ ...prev, [key]: value }));
@@ -134,6 +150,7 @@ const Sessions: React.FC = () => {
       topic: [],
     });
     setExpertiseFilter([]);
+    setWorkshopStatusFilter(undefined);
   };
 
   const getWorkshopColor = (workshopId: string) => {
@@ -185,7 +202,7 @@ const Sessions: React.FC = () => {
         {/* Left: Basic Filters */}
         <div className="lg:col-span-2">
           <div className="bg-white/80 backdrop-blur rounded-xl shadow-lg p-6 border border-white/20">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
               {/* Search */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Search</label>
@@ -213,21 +230,43 @@ const Sessions: React.FC = () => {
                 </select>
               </div>
 
+              {/* Workshop Status */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Workshop Status</label>
+                <select
+                  value={workshopStatusFilter || ''}
+                  onChange={(e) => setWorkshopStatusFilter(e.target.value as 'active' | 'historical' | undefined || undefined)}
+                  className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                  <option value="">All Workshops</option>
+                  <option value="active">Active Only</option>
+                  <option value="historical">Historical Only</option>
+                </select>
+              </div>
+
               {/* Workshop */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Workshop</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Workshop Series</label>
                 <div className="space-y-1 max-h-24 overflow-y-auto">
-                  {filterOptions.workshops.map(workshopId => (
-                    <label key={workshopId} className="flex items-center text-sm">
-                      <input
-                        type="checkbox"
-                        checked={filters.workshop.includes(workshopId)}
-                        onChange={() => toggleArrayFilter('workshop', workshopId)}
-                        className="mr-2"
-                      />
-                      {workshops[workshopId]?.shortName || workshopId}
-                    </label>
-                  ))}
+                  {filterOptions.workshops.map(workshopId => {
+                    const workshop = workshops[workshopId];
+                    const isActive = workshop?.active;
+                    return (
+                      <label key={workshopId} className="flex items-center text-sm">
+                        <input
+                          type="checkbox"
+                          checked={filters.workshop.includes(workshopId)}
+                          onChange={() => toggleArrayFilter('workshop', workshopId)}
+                          className="mr-2"
+                        />
+                        <span className={`w-3 h-3 rounded-full mr-2 ${isActive ? 'bg-green-500' : 'bg-gray-400 opacity-70'}`} />
+                        <span className={isActive ? '' : 'opacity-70'}>
+                          {workshop?.shortName || workshopId}
+                          {!isActive && <span className="text-xs text-gray-500 ml-1">(Historical)</span>}
+                        </span>
+                      </label>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -285,6 +324,7 @@ const Sessions: React.FC = () => {
             <div className="flex items-center justify-between pt-4 border-t border-gray-200">
               <p className="text-sm text-gray-600">
                 Showing {filteredSessions.length} of {allSessions.length} sessions
+                {workshopStatusFilter && ` (${workshopStatusFilter} workshops only)`}
                 {expertiseFilter.length > 0 && ` with ${expertiseFilter.length} expertise filter${expertiseFilter.length === 1 ? '' : 's'}`}
               </p>
               <div className="flex items-center space-x-3">
@@ -334,6 +374,13 @@ const Sessions: React.FC = () => {
                   <div className="flex items-center space-x-3 mb-2">
                     <span className={`px-2 py-1 rounded-full text-xs font-medium ${getWorkshopColor(session.workshopId)}`}>
                       {workshops[session.workshopId]?.shortName || session.workshopId}
+                    </span>
+                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                      workshops[session.workshopId]?.active 
+                        ? 'bg-green-100 text-green-800' 
+                        : 'bg-gray-100 text-gray-600'
+                    }`}>
+                      {workshops[session.workshopId]?.active ? 'Active' : 'Historical'}
                     </span>
                     <span className="text-gray-500 text-sm">{session.year}</span>
                     <span className="text-gray-500 text-sm">{session.date}</span>

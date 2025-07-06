@@ -8,6 +8,7 @@ export interface CalendarFilters {
   presenters: string[];
   sessionTypes: string[];
   topics: string[];
+  workshopStatus?: 'active' | 'historical';
   dateRange?: {
     start: Date;
     end: Date;
@@ -147,7 +148,7 @@ function calculateDensity(sessionCount: number): 'none' | 'low' | 'medium' | 'hi
 }
 
 // Apply filters to sessions
-export function applyCalendarFilters(sessions: SessionDetail[], filters: CalendarFilters): SessionDetail[] {
+export function applyCalendarFilters(sessions: SessionDetail[], filters: CalendarFilters, workshops?: { [key: string]: Workshop }): SessionDetail[] {
   return sessions.filter(session => {
     // Workshop filter
     if (filters.workshops.length > 0 && !filters.workshops.includes(session.workshopId)) {
@@ -176,6 +177,19 @@ export function applyCalendarFilters(sessions: SessionDetail[], filters: Calenda
       if (!hasMatchingTopic) return false;
     }
     
+    // Workshop status filter
+    if (filters.workshopStatus && workshops) {
+      const workshop = workshops[session.workshopId];
+      if (!workshop) return false;
+      
+      if (filters.workshopStatus === 'active' && !workshop.active) {
+        return false;
+      }
+      if (filters.workshopStatus === 'historical' && workshop.active) {
+        return false;
+      }
+    }
+    
     // Date range filter
     if (filters.dateRange) {
       const sessionDate = parseSessionDate(session);
@@ -193,9 +207,10 @@ export function applyCalendarFilters(sessions: SessionDetail[], filters: Calenda
 // Process sessions into calendar data structure
 export function processCalendarData(
   sessions: SessionDetail[], 
-  filters: CalendarFilters = { workshops: [], presenters: [], sessionTypes: [], topics: [] }
+  filters: CalendarFilters = { workshops: [], presenters: [], sessionTypes: [], topics: [] },
+  workshops?: { [key: string]: Workshop }
 ): CalendarData {
-  const filteredSessions = applyCalendarFilters(sessions, filters);
+  const filteredSessions = applyCalendarFilters(sessions, filters, workshops);
   
   // Group sessions by year and month
   const yearGroups: { [year: number]: SessionDetail[] } = {};

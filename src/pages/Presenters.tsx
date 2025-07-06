@@ -8,7 +8,7 @@ import {
   searchPresentersByExpertise,
   getRelatedPresenters 
 } from '../utils/presenterProcessor';
-import { loadAllWorkshopData } from '../utils/dataProcessor';
+import { loadAllWorkshopData, getWorkshops } from '../utils/dataProcessor';
 import { mapExpertiseToTaxonomy, findNodeById, EXPERTISE_TAXONOMY } from '../utils/expertiseTaxonomy';
 
 const SORT_OPTIONS = [
@@ -33,12 +33,16 @@ function Presenters() {
   const [filterBy, setFilterBy] = useState('all');
   const [selectedExpertise, setSelectedExpertise] = useState<string[]>([]);
   const [showExpertiseFilter, setShowExpertiseFilter] = useState(false);
+  const [workshopStatusFilter, setWorkshopStatusFilter] = useState<'active' | 'historical' | undefined>(undefined);
 
   // Load presenter data
   const presenterDirectory = useMemo(() => {
     const workshopData = loadAllWorkshopData();
     return processPresenterProfiles(workshopData);
   }, []);
+
+  // Load workshops data
+  const workshops = useMemo(() => getWorkshops(), []);
 
   const presenters = useMemo(() => Object.values(presenterDirectory), [presenterDirectory]);
 
@@ -87,6 +91,23 @@ function Presenters() {
       });
     }
 
+    // Apply workshop status filtering
+    if (workshopStatusFilter) {
+      filtered = filtered.filter(presenter => {
+        return presenter.teaching.workshopsParticipated.some(workshopId => {
+          const workshop = workshops[workshopId];
+          if (!workshop) return false;
+          
+          if (workshopStatusFilter === 'active') {
+            return workshop.active;
+          } else if (workshopStatusFilter === 'historical') {
+            return !workshop.active;
+          }
+          return true;
+        });
+      });
+    }
+
     // Apply categorical filters
     switch (filterBy) {
       case 'enriched':
@@ -119,7 +140,7 @@ function Presenters() {
     });
 
     return filtered;
-  }, [presenters, searchTerm, selectedExpertise, filterBy, sortBy, presenterDirectory]);
+  }, [presenters, searchTerm, selectedExpertise, filterBy, sortBy, presenterDirectory, workshopStatusFilter, workshops]);
 
   // Get related presenters for modal
   const relatedPresenters = useMemo(() => {
@@ -190,7 +211,7 @@ function Presenters() {
           {/* Left column: Search and basic filters */}
           <div className="lg:col-span-2">
             <div className="bg-white rounded-lg shadow-md p-6">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
                 {/* Search */}
                 <div>
                   <label htmlFor="search" className="block text-sm font-medium text-gray-700 mb-2">
@@ -204,6 +225,23 @@ function Presenters() {
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   />
+                </div>
+
+                {/* Workshop Status */}
+                <div>
+                  <label htmlFor="workshopStatus" className="block text-sm font-medium text-gray-700 mb-2">
+                    Workshop Status
+                  </label>
+                  <select
+                    id="workshopStatus"
+                    value={workshopStatusFilter || ''}
+                    onChange={(e) => setWorkshopStatusFilter(e.target.value as 'active' | 'historical' | undefined || undefined)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  >
+                    <option value="">All Workshops</option>
+                    <option value="active">Active Only</option>
+                    <option value="historical">Historical Only</option>
+                  </select>
                 </div>
 
                 {/* Category filter */}
@@ -250,6 +288,7 @@ function Presenters() {
                 <p className="text-sm text-gray-600">
                   Showing {filteredPresenters.length} of {presenters.length} presenters
                   {searchTerm && ` matching "${searchTerm}"`}
+                  {workshopStatusFilter && ` (${workshopStatusFilter} workshops only)`}
                   {selectedExpertise.length > 0 && ` with ${selectedExpertise.length} expertise filter${selectedExpertise.length === 1 ? '' : 's'}`}
                 </p>
                 <button
