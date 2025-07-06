@@ -12,6 +12,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     { name: 'Dashboard', href: '/dashboard', icon: '📊' },
     { name: 'Timeline', href: '/timeline', icon: '📅' },
     { name: 'Sessions', href: '/sessions', icon: '🔍' },
+    { name: 'Presenters', href: '/presenters', icon: '👨‍🏫' },
     { name: 'About', href: '/about', icon: 'ℹ️' },
   ];
 

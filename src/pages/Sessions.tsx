@@ -1,12 +1,30 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { getAllSessions, getFilterOptions, searchSessions, getWorkshops } from '../utils/dataProcessor';
+import { getAllSessions, getFilterOptions, searchSessions, getWorkshops, loadAllWorkshopData } from '../utils/dataProcessor';
+import { processPresenterProfiles, searchPresentersByExpertise } from '../utils/presenterProcessor';
+import { convertFacultyIdToName } from '../utils/facultyHelper';
 import type { SearchFilters, SessionDetail } from '../types';
 
 const Sessions: React.FC = () => {
   const allSessions = useMemo(() => getAllSessions(), []);
   const workshops = useMemo(() => getWorkshops(), []);
   const filterOptions = useMemo(() => getFilterOptions(allSessions), [allSessions]);
+  
+  // Load presenter profiles for expertise filtering
+  const presenterDirectory = useMemo(() => {
+    const workshopData = loadAllWorkshopData();
+    return processPresenterProfiles(workshopData);
+  }, []);
+
+  // Get unique expertise areas for filtering
+  const expertiseOptions = useMemo(() => {
+    const areas = new Set<string>();
+    Object.values(presenterDirectory).forEach(presenter => {
+      presenter.expertise.primaryAreas.forEach(area => areas.add(area));
+      presenter.expertise.techniques.forEach(technique => areas.add(technique));
+    });
+    return Array.from(areas).sort();
+  }, [presenterDirectory]);
 
   const [filters, setFilters] = useState<SearchFilters>({
     search: '',
@@ -16,6 +34,8 @@ const Sessions: React.FC = () => {
     presenter: [],
     topic: [],
   });
+
+  const [expertiseFilter, setExpertiseFilter] = useState<string>('');
 
   const [sortBy, setSortBy] = useState<'date' | 'topic' | 'presenter'>('date');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
@@ -27,6 +47,21 @@ const Sessions: React.FC = () => {
       sessionType: filters.sessionType,
       presenter: filters.presenter,
     });
+
+    // Apply expertise filtering
+    if (expertiseFilter) {
+      const expertsInArea = searchPresentersByExpertise(expertiseFilter, presenterDirectory);
+      const expertNames = new Set(expertsInArea.map(p => p.name.toLowerCase()));
+      
+      result = result.filter(session => 
+        session.presenters.some(presenter => 
+          expertNames.has(presenter.toLowerCase())
+        ) ||
+        (session.coPresenters || []).some(presenter => 
+          expertNames.has(presenter.toLowerCase())
+        )
+      );
+    }
 
     // Sort results
     result.sort((a, b) => {
@@ -48,7 +83,7 @@ const Sessions: React.FC = () => {
     });
 
     return result;
-  }, [allSessions, filters, sortBy, sortOrder]);
+  }, [allSessions, filters, expertiseFilter, presenterDirectory, sortBy, sortOrder]);
 
   const handleFilterChange = (key: keyof SearchFilters, value: any) => {
     setFilters(prev => ({ ...prev, [key]: value }));
@@ -73,6 +108,7 @@ const Sessions: React.FC = () => {
       presenter: [],
       topic: [],
     });
+    setExpertiseFilter('');
   };
 
   const getWorkshopColor = (workshopId: string) => {
@@ -184,6 +220,55 @@ const Sessions: React.FC = () => {
               ))}
             </div>
           </div>
+
+          {/* Presenter Expertise */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Presenter Expertise
+              <span className="ml-1 text-xs text-gray-500">(filter by research area)</span>
+            </label>
+            <select
+              value={expertiseFilter}
+              onChange={(e) => setExpertiseFilter(e.target.value)}
+              className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option value="">All Expertise Areas</option>
+              {expertiseOptions.map(area => (
+                <option key={area} value={area}>{area}</option>
+              ))}
+            </select>
+          </div>
+
+          {/* Presenter Filter */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Presenter Name
+              <Link 
+                to="/presenters" 
+                className="ml-2 text-xs text-blue-600 hover:text-blue-800"
+              >
+                Browse all →
+              </Link>
+            </label>
+            <div className="space-y-1 max-h-24 overflow-y-auto">
+              {filterOptions.presenters.slice(0, 10).map(presenter => (
+                <label key={presenter} className="flex items-center text-sm">
+                  <input
+                    type="checkbox"
+                    checked={filters.presenter.includes(presenter)}
+                    onChange={() => toggleArrayFilter('presenter', presenter)}
+                    className="mr-2"
+                  />
+                  <span className="truncate">{convertFacultyIdToName(presenter)}</span>
+                </label>
+              ))}
+              {filterOptions.presenters.length > 10 && (
+                <div className="text-xs text-gray-500 pt-1">
+                  ... and {filterOptions.presenters.length - 10} more
+                </div>
+              )}
+            </div>
+          </div>
         </div>
 
         {/* Clear Filters */}
@@ -233,9 +318,9 @@ const Sessions: React.FC = () => {
                   </h3>
                   
                   <div className="text-sm text-gray-600 space-y-1">
-                    <p><strong>Presenter:</strong> {session.presenters[0]}</p>
+                    <p><strong>Presenter:</strong> {convertFacultyIdToName(session.presenters[0])}</p>
                     {session.coPresenters && session.coPresenters.length > 0 && (
-                      <p><strong>Co-presenters:</strong> {session.coPresenters.join(', ')}</p>
+                      <p><strong>Co-presenters:</strong> {session.coPresenters.map(convertFacultyIdToName).join(', ')}</p>
                     )}
                     <p><strong>Type:</strong> {session.type}</p>
                     {session.location && <p><strong>Location:</strong> {session.location}</p>}

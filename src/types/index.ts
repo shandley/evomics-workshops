@@ -124,3 +124,79 @@ export interface CurriculumEvolution {
   }[];
   trend: 'increasing' | 'decreasing' | 'stable' | 'discontinued';
 }
+
+// Presenter Profile Types
+export interface StandardizedTopic {
+  id: string;
+  label: string;
+  level: number;
+  parentId?: string;
+  description?: string;
+  synonyms?: string[];
+  children?: string[];
+  icon?: string;
+}
+
+export interface PresenterEnrichment {
+  lastUpdated: string;
+  confidence: 'high' | 'medium' | 'low';
+  professional?: {
+    title?: string;
+    affiliation?: string;
+    department?: string;
+    labWebsite?: string;
+  };
+  academic?: {
+    orcid?: string;
+    researchAreas?: {
+      raw: string[];
+      standardized?: {
+        primary: StandardizedTopic[];
+        secondary?: StandardizedTopic[];
+      };
+    };
+  };
+  profile?: {
+    shortBio?: string;
+    source?: string;
+  };
+}
+
+export interface PresenterTeachingStats {
+  totalSessions: number;
+  workshopsParticipated: string[];
+  yearsActive: number[];
+  recentActivity: boolean; // active in last 3 years
+  sessionsByWorkshop: { [workshopId: string]: number };
+  sessionsByYear: { [year: string]: number };
+  firstTaught: number;
+  lastTaught: number;
+  primaryTopics: string[];
+}
+
+export interface PresenterProfile {
+  id: string;
+  name: string;
+  displayName: string;
+  
+  // From faculty enrichment data
+  enrichment?: PresenterEnrichment;
+  
+  // Calculated from workshop sessions
+  teaching: PresenterTeachingStats;
+  
+  // Derived expertise
+  expertise: {
+    primaryAreas: string[];
+    techniques: string[];
+    workshopSpecializations: string[];
+  };
+}
+
+export interface PresenterDirectory {
+  [presenterId: string]: PresenterProfile;
+}
+
+export interface EnhancedSessionDetail extends SessionDetail {
+  enrichedPresenters: PresenterProfile[];
+}

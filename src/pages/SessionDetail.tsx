@@ -1,12 +1,24 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { getAllSessions, getWorkshops } from '../utils/dataProcessor';
+import { getAllSessions, getWorkshops, loadAllWorkshopData } from '../utils/dataProcessor';
 import { convertFacultyIdToName, getFacultyProfileUrl } from '../utils/facultyHelper';
+import { PresenterBadge } from '../components/PresenterCard';
+import { PresenterModal } from '../components/PresenterModal';
+import { processPresenterProfiles, getPresenterProfile, getRelatedPresenters } from '../utils/presenterProcessor';
+import type { PresenterProfile } from '../types';
 
 const SessionDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
+  const [selectedPresenter, setSelectedPresenter] = useState<PresenterProfile | null>(null);
+  
   const allSessions = useMemo(() => getAllSessions(), []);
   const workshops = useMemo(() => getWorkshops(), []);
+  
+  // Load presenter profiles
+  const presenterDirectory = useMemo(() => {
+    const workshopData = loadAllWorkshopData();
+    return processPresenterProfiles(workshopData);
+  }, []);
 
   const session = useMemo(() => {
     return allSessions.find(s => s.id === id);
@@ -24,6 +36,30 @@ const SessionDetail: React.FC = () => {
       )
       .slice(0, 5);
   }, [allSessions, session]);
+
+  // Get presenter profiles for this session
+  const sessionPresenters = useMemo(() => {
+    if (!session) return [];
+    
+    const allPresenters = [...session.presenters, ...(session.coPresenters || [])];
+    return allPresenters
+      .map(presenterName => getPresenterProfile(presenterName, presenterDirectory))
+      .filter(Boolean) as PresenterProfile[];
+  }, [session, presenterDirectory]);
+
+  // Get related presenters for modal
+  const relatedPresenters = useMemo(() => {
+    if (!selectedPresenter) return [];
+    return getRelatedPresenters(selectedPresenter, presenterDirectory, 5);
+  }, [selectedPresenter, presenterDirectory]);
+
+  const handleViewPresenter = (presenter: PresenterProfile) => {
+    setSelectedPresenter(presenter);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedPresenter(null);
+  };
 
   if (!session) {
     return (
@@ -116,61 +152,106 @@ const SessionDetail: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Main Content */}
         <div className="lg:col-span-2 space-y-6">
-          {/* Presenter Information */}
+          {/* Enhanced Presenter Information */}
           <div className="bg-white rounded-lg shadow p-6">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Presenter Information</h2>
+            <h2 className="text-xl font-bold text-gray-900 mb-4">Session Presenters</h2>
             
-            <div className="space-y-4">
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Primary Presenter</h3>
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                    <span className="text-blue-600 font-bold text-lg">
-                      {convertFacultyIdToName(session.presenters[0])?.split(' ').map(n => n[0]).join('') || '?'}
-                    </span>
+            {sessionPresenters.length > 0 ? (
+              <div className="space-y-4">
+                {sessionPresenters.map((presenter, index) => (
+                  <div key={presenter.id}>
+                    {index === 0 && (
+                      <h3 className="text-sm font-medium text-gray-700 mb-2">Primary Presenter</h3>
+                    )}
+                    {index === 1 && session.coPresenters && session.coPresenters.length > 0 && (
+                      <h3 className="text-sm font-medium text-gray-700 mb-2 mt-6">Co-presenters</h3>
+                    )}
+                    
+                    <PresenterBadge
+                      presenter={presenter}
+                      onViewProfile={handleViewPresenter}
+                      showExpertise={true}
+                    />
                   </div>
+                ))}
+              </div>
+            ) : (
+              <div className="space-y-4">
+                {/* Fallback for presenters without profiles */}
+                <div>
+                  <h3 className="text-sm font-medium text-gray-700 mb-2">Primary Presenter</h3>
+                  <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                      <span className="text-blue-600 font-bold text-sm">
+                        {convertFacultyIdToName(session.presenters[0])?.split(' ').map(n => n[0]).join('') || '?'}
+                      </span>
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-medium text-gray-900">{convertFacultyIdToName(session.presenters[0])}</div>
+                      <a 
+                        href={getFacultyProfileUrl(session.presenters[0])}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-800 text-sm"
+                      >
+                        View Faculty Profile →
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {session.coPresenters && session.coPresenters.length > 0 && (
                   <div>
-                    <div className="font-medium text-gray-900">{convertFacultyIdToName(session.presenters[0])}</div>
-                    <a 
-                      href={getFacultyProfileUrl(session.presenters[0])}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-800 text-sm"
-                    >
-                      View Faculty Profile →
-                    </a>
+                    <h3 className="text-sm font-medium text-gray-700 mb-2">Co-presenters</h3>
+                    <div className="space-y-2">
+                      {session.coPresenters.map((presenter, index) => (
+                        <div key={index} className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                          <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                            <span className="text-gray-600 font-medium text-xs">
+                              {convertFacultyIdToName(presenter).split(' ').map(n => n[0]).join('')}
+                            </span>
+                          </div>
+                          <div className="flex-1">
+                            <div className="font-medium text-gray-900">{convertFacultyIdToName(presenter)}</div>
+                            <a 
+                              href={getFacultyProfileUrl(presenter)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-600 hover:text-blue-800 text-sm"
+                            >
+                              View Faculty Profile →
+                            </a>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
+                )}
+              </div>
+            )}
+
+            {/* Quick actions for presenters */}
+            {sessionPresenters.length > 0 && (
+              <div className="mt-6 pt-4 border-t border-gray-200">
+                <div className="flex flex-wrap gap-2">
+                  <Link
+                    to="/presenters"
+                    className="inline-flex items-center px-3 py-2 border border-primary-300 rounded-md text-sm font-medium text-primary-700 bg-primary-50 hover:bg-primary-100 transition-colors"
+                  >
+                    Browse All Presenters
+                  </Link>
+                  
+                  {sessionPresenters[0] && (
+                    <Link
+                      to={`/sessions?presenter=${encodeURIComponent(sessionPresenters[0].name)}`}
+                      className="inline-flex items-center px-3 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors"
+                    >
+                      More Sessions by {sessionPresenters[0].displayName.split(' ')[0]}
+                    </Link>
+                  )}
                 </div>
               </div>
-
-              {session.coPresenters && session.coPresenters.length > 0 && (
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Co-presenters</h3>
-                  <div className="space-y-2">
-                    {session.coPresenters.map((presenter, index) => (
-                      <div key={index} className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
-                          <span className="text-gray-600 font-medium text-sm">
-                            {convertFacultyIdToName(presenter).split(' ').map(n => n[0]).join('')}
-                          </span>
-                        </div>
-                        <div>
-                          <div className="font-medium text-gray-900">{convertFacultyIdToName(presenter)}</div>
-                          <a 
-                            href={getFacultyProfileUrl(presenter)}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-600 hover:text-blue-800 text-sm"
-                          >
-                            View Faculty Profile →
-                          </a>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
+            )}
           </div>
 
           {/* Workshop Context */}
@@ -277,6 +358,15 @@ const SessionDetail: React.FC = () => {
           )}
         </div>
       </div>
+
+      {/* Presenter Modal */}
+      <PresenterModal
+        presenter={selectedPresenter}
+        isOpen={!!selectedPresenter}
+        onClose={handleCloseModal}
+        relatedPresenters={relatedPresenters}
+        onViewRelated={handleViewPresenter}
+      />
     </div>
   );
 };

@@ -5,6 +5,7 @@ import Dashboard from './pages/Dashboard';
 import Timeline from './pages/Timeline';
 import Sessions from './pages/Sessions';
 import SessionDetail from './pages/SessionDetail';
+import Presenters from './pages/Presenters';
 import About from './pages/About';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/timeline" element={<Timeline />} />
           <Route path="/sessions" element={<Sessions />} />
           <Route path="/sessions/:id" element={<SessionDetail />} />
+          <Route path="/presenters" element={<Presenters />} />
           <Route path="/about" element={<About />} />
         </Routes>
       </Layout>

@@ -12,6 +12,30 @@ import { normalizeWorkshopId, getTeachingWorkshopId } from './workshopIdMapper.j
 import workshopsData from '../data/workshops.json' with { type: 'json' };
 import teachingData from '../../data/processed/teachingDataCompleteMultiWorkshop.json' with { type: 'json' };
 
+// Import all workshop schedule files
+import wog2011FortCollins from '../../data/workshops/wog-2011-fort-collins.json' with { type: 'json' };
+import wog2011Smithsonian from '../../data/workshops/wog-2011-smithsonian.json' with { type: 'json' };
+import wog2012 from '../../data/workshops/wog-2012.json' with { type: 'json' };
+import wog2013 from '../../data/workshops/wog-2013.json' with { type: 'json' };
+import wog2014 from '../../data/workshops/wog-2014.json' with { type: 'json' };
+import wog2015 from '../../data/workshops/wog-2015.json' with { type: 'json' };
+import wog2016 from '../../data/workshops/wog-2016.json' with { type: 'json' };
+import wog2017 from '../../data/workshops/wog-2017.json' with { type: 'json' };
+import wog2018 from '../../data/workshops/wog-2018.json' with { type: 'json' };
+import wog2019 from '../../data/workshops/wog-2019.json' with { type: 'json' };
+import wog2020 from '../../data/workshops/wog-2020.json' with { type: 'json' };
+import wog2022 from '../../data/workshops/wog-2022.json' with { type: 'json' };
+import wog2023 from '../../data/workshops/wog-2023.json' with { type: 'json' };
+import wog2024 from '../../data/workshops/wog-2024.json' with { type: 'json' };
+import wpsg2016 from '../../data/workshops/wpsg-2016.json' with { type: 'json' };
+import wpsg2018 from '../../data/workshops/wpsg-2018.json' with { type: 'json' };
+import wpsg2020 from '../../data/workshops/wpsg-2020.json' with { type: 'json' };
+import wpsg2022 from '../../data/workshops/wpsg-2022.json' with { type: 'json' };
+import wpsg2025 from '../../data/workshops/wpsg-2025.json' with { type: 'json' };
+import wphylo2017 from '../../data/workshops/wphylo-2017.json' with { type: 'json' };
+import wphylo2019 from '../../data/workshops/wphylo-2019.json' with { type: 'json' };
+import wphylo2024 from '../../data/workshops/wphylo-2024.json' with { type: 'json' };
+
 // Process workshop definitions
 export function getWorkshops(): { [key: string]: Workshop } {
   return workshopsData as { [key: string]: Workshop };
@@ -20,6 +44,42 @@ export function getWorkshops(): { [key: string]: Workshop } {
 // Process teaching data
 export function getTeachingData(): EnrichedFacultyProfile {
   return teachingData as EnrichedFacultyProfile;
+}
+
+// Load all workshop schedule data
+export function loadAllWorkshopData(): { [key: string]: WorkshopSchedule[] } {
+  const workshopSchedules: { [key: string]: WorkshopSchedule[] } = {
+    'wog': [
+      wog2011FortCollins as WorkshopSchedule,
+      wog2011Smithsonian as WorkshopSchedule,
+      wog2012 as WorkshopSchedule,
+      wog2013 as WorkshopSchedule,
+      wog2014 as WorkshopSchedule,
+      wog2015 as WorkshopSchedule,
+      wog2016 as WorkshopSchedule,
+      wog2017 as WorkshopSchedule,
+      wog2018 as WorkshopSchedule,
+      wog2019 as WorkshopSchedule,
+      wog2020 as WorkshopSchedule,
+      wog2022 as WorkshopSchedule,
+      wog2023 as WorkshopSchedule,
+      wog2024 as WorkshopSchedule,
+    ],
+    'wpsg': [
+      wpsg2016 as WorkshopSchedule,
+      wpsg2018 as WorkshopSchedule,
+      wpsg2020 as WorkshopSchedule,
+      wpsg2022 as WorkshopSchedule,
+      wpsg2025 as WorkshopSchedule,
+    ],
+    'wphylo': [
+      wphylo2017 as WorkshopSchedule,
+      wphylo2019 as WorkshopSchedule,
+      wphylo2024 as WorkshopSchedule,
+    ]
+  };
+
+  return workshopSchedules;
 }
 
 // Generate all session details from teaching data
